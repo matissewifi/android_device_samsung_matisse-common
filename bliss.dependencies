@@ -28,6 +28,12 @@
         "repository": "android_device_qcom_common",
         "target_path": "device/qcom/common",
         "revision": "cm-12.0"
+    },
+    {
+        "remote": "cm",
+        "repository": "android_hardware_qcom_fm",
+        "target_path": "hardware/qcom/fm",
+        "revision": "cm-12.0"
     }
 ]
 
