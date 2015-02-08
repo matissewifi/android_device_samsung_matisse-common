@@ -1,20 +1,14 @@
 [
     {
         "remote": "TeamBliss-Devices",
-        "repository": "android_device_samsung_s3ve3g",
-        "target_path": "device/samsung/s3ve3g",
+        "repository": "android_device_samsung_msm8226-common",
+        "target_path": "device/samsung/msm8226-common",
         "revision": "lp5.0"
     },
     {
         "remote": "TeamBliss-Devices",
         "repository": "android_kernel_samsung_s3ve3g",
         "target_path": "kernel/samsung/s3ve3g",
-        "revision": "lp5.0"
-    },
-    {
-        "remote": "TeamBliss-Devices",
-        "repository": "android_device_samsung_msm8226-common",
-        "target_path": "device/samsung/msm8226-common",
         "revision": "lp5.0"
     },
     {
