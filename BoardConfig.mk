@@ -23,7 +23,7 @@ LOCAL_PATH := device/samsung/ms013g
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # CMHW
-BOARD_HARDWARE_CLASS += device/samsung/ms013g/cmhw
+#BOARD_HARDWARE_CLASS += device/samsung/ms013g/cmhw
 
 # Init
 #TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_s3ve3g.c
