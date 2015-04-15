@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/samsung/s3ve3g
+LOCAL_PATH := device/samsung/ms013g
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Proprietary files
-$(call inherit-product, vendor/samsung/s3ve3g/s3ve3g-vendor.mk)
+$(call inherit-product, vendor/samsung/ms013g/ms013g-vendor.mk)
 
 # Media
 PRODUCT_COPY_FILES += \

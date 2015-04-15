@@ -33,7 +33,7 @@ vendor/lib/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.msm8226.so:lib/hw/camera.vendor.msm8226.so
+lib/hw/camera.msm8226.so
 lib/libarcsoft_flawlessface.so
 lib/libarcsoft_night_shot.so
 lib/libarcsoft_panorama_burstcapture.so
@@ -74,54 +74,89 @@ vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
+vendor/lib/libmmQSM.so
+vendor/lib/libmmQTA.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
-vendor/lib/libsensor1.so
 
 # Camera chromatix
-lib/B08QT_libTsAe.so
-lib/B08QT_libTsAf.so
-lib/B08QT_libTs_J_Accm.so
-lib/B08QT_libTs_J_Awb.so
+lib/E08QL_libTsAe.so
+lib/E08QL_libTsAf.so
+lib/E08QL_libTs_J_Accm.so
+lib/E08QL_libTs_J_Awb.so
 lib/libAfSingle.so
 lib/libchromatix_s5k6a3yx_smart_stay.so
-lib/libchromatix_s5k6a3yx_vt.so
+lib/libchromatix_s5k6b2yx_preview.so
 lib/libchromatix_s5k6a3yx_vt_hd.so
+lib/libchromatix_s5k6b2yx_smart_stay.so
+lib/libchromatix_s5k6a3yx_vt.so
+lib/libchromatix_s5k6b2yx_vt_hd.so
+lib/libchromatix_s5k6b2yx_common.so
+lib/libchromatix_s5k6b2yx_vt.so
+lib/libchromatix_s5k6b2yx_default_video.so
+lib/libchromatix_s5k6b2yx_zslshot.so
 lib/libTsAe.so
 lib/libTsAf.so
 lib/libTs_J_Accm.so
 lib/libTs_J_Awb.so
-vendor/lib/B08QT_libchromatix_imx175_common.so
 vendor/lib/B08QT_libchromatix_imx175_common_res0.so
-vendor/lib/B08QT_libchromatix_imx175_common_res1.so
-vendor/lib/B08QT_libchromatix_imx175_default_video.so
-vendor/lib/B08QT_libchromatix_imx175_liveshot.so
-vendor/lib/B08QT_libchromatix_imx175_panorama.so
-vendor/lib/B08QT_libchromatix_imx175_preview.so
-vendor/lib/B08QT_libchromatix_imx175_snapshot.so
-vendor/lib/B08QT_libchromatix_imx175_video_hd.so
-vendor/lib/B08QT_libchromatix_imx175_zsl.so
-vendor/lib/B08QT_libchromatix_imx175_zslshot.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_common.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_common_res0.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_common_res1.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_default_video.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_liveshot.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_panorama.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_preview.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_snapshot.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_video_hd.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_zsl.so
+vendor/lib/B08QT_libchromatix_imx175_common_res1.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_zslshot.so
+vendor/lib/B08QT_libchromatix_imx175_common.so  
+vendor/lib/E08QL_libchromatix_s5k4h5yb_zsl.so
+vendor/lib/B08QT_libchromatix_imx175_default_video.so 
 vendor/lib/libchromatix_imx175_common.so
+vendor/lib/B08QT_libchromatix_imx175_liveshot.so
 vendor/lib/libchromatix_imx175_preview.so
+vendor/lib/B08QT_libchromatix_imx175_panorama.so
+vendor/lib/libchromatix_imx219_common_res0.so
+vendor/lib/B08QT_libchromatix_imx175_preview.so 
+vendor/lib/libchromatix_imx219_common.so
+vendor/lib/B08QT_libchromatix_imx175_snapshot.so
+vendor/lib/libchromatix_imx219_default_video.so
+vendor/lib/B08QT_libchromatix_imx175_video_hd.so
+vendor/lib/libchromatix_imx219_liveshot.so
+vendor/lib/B08QT_libchromatix_imx175_zslshot.so 
+vendor/lib/libchromatix_imx219_panorama.so
+vendor/lib/B08QT_libchromatix_imx175_zsl.so  
+vendor/lib/libchromatix_imx219_preview.so
+vendor/lib/C08QT_libchromatix_imx175_common_res0.so
+vendor/lib/libchromatix_imx219_snapshot.so
+vendor/lib/C08QT_libchromatix_imx175_common_res1.so
+vendor/lib/libchromatix_imx219_zslshot.so
+vendor/lib/C08QT_libchromatix_imx175_common.so
 vendor/lib/libchromatix_s5k6a3yx_common.so
+vendor/lib/C08QT_libchromatix_imx175_default_video.so
 vendor/lib/libchromatix_s5k6a3yx_default_video.so
+vendor/lib/C08QT_libchromatix_imx175_liveshot.so
 vendor/lib/libchromatix_s5k6a3yx_preview.so
+vendor/lib/C08QT_libchromatix_imx175_preview.so
 vendor/lib/libchromatix_s5k6a3yx_snapshot.so
+vendor/lib/C08QT_libchromatix_imx175_snapshot.so
 vendor/lib/libchromatix_s5k6a3yx_video_hd.so
+vendor/lib/C08QT_libchromatix_imx175_video_hd.so
 vendor/lib/libchromatix_s5k6a3yx_zsl.so
+vendor/lib/C08QT_libchromatix_imx175_zslshot.so
+vendor/lib/libchromatix_s5k8b1yx_common.so
+vendor/lib/C08QT_libchromatix_imx175_zsl.so
+vendor/lib/libchromatix_s5k8b1yx_pip.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_common_res0.so
+vendor/lib/libchromatix_s5k8b1yx_preview.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_common_res1.so
+vendor/lib/libchromatix_s5k8b1yx_smart_stay.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_common.so
+vendor/lib/libchromatix_s5k8b1yx_snapshot.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_default_video.so
+vendor/lib/libchromatix_s5k8b1yx_video.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_liveshot.so
+vendor/lib/libchromatix_s5k8b1yx_vt_hd.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_panorama.so
+vendor/lib/libchromatix_s5k8b1yx_vt.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_preview.so
+vendor/lib/libchromatix_s5k8b1yx_zslshot.so
+
 
 # Camera firmware
 etc/B08QT_imx175_module_info.xml
@@ -146,7 +181,9 @@ vendor/lib/librpmb.so
 vendor/lib/libssd.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
+vendor/lib/libStDrvInt.so
 vendor/lib/libWVStreamControlAPI_L1.so
+lib/libWVphoneAPI.so
 
 # GPS
 -app/com.qualcomm.location/com.qualcomm.location.apk
@@ -186,6 +223,12 @@ etc/firmware/a330_pm4.fw
 # IPC router security
 bin/irsc_util
 etc/sec_config
+
+# Listen service
+vendor/lib/liblistenhardware.so
+vendor/lib/liblistenjni.so
+vendor/lib/liblistensoundmodel.so
+vendor/lib/liblisten.so
 
 # Media
 vendor/lib/libDivxDrm.so
@@ -228,6 +271,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
 # Radio
+bin/ATFWD-daemon
 bin/ds_fmc_appd
 bin/qmuxd
 bin/radish
@@ -239,17 +283,21 @@ lib/libcordon.so
 lib/libfactoryutil.so
 lib/libomission_avoidance.so
 lib/libreference-ril.so
-lib/libril.so
-lib/libsec-ril.so
 lib/libsecnativefeature.so
 lib/libsecril-client.so
+lib/libsec-ril.so
+lib/libsec-ril-dsds.so
+lib/libril.so
 vendor/lib/libconfigdb.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libxml.so
+lib/librilutils.so
 
 # Sensors
 lib/hw/sensors.msm8226.so
 lib/libyasalgo.so
+vendor/lib/libsensor1.so
+etc/sensor_def_qcomdev.conf
 
 # Thermal
 bin/thermal-engine
@@ -264,3 +312,6 @@ vendor/lib/libTimeService.so
 
 # WiFi
 lib/libqsap_sdk.so
+
+# Misc
+bin/port-bridge
