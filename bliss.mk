@@ -16,7 +16,7 @@
 $(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/s3ve3g/full_ms013g.mk)
+$(call inherit-product, device/samsung/ms013g/full_ms013g.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := SM-G7102
