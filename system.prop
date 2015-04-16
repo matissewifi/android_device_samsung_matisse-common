@@ -1,3 +1,12 @@
+#
+#Devies Fingerprints
+#
+ro.build.fingerprint=samsung/ms013gxx/ms013g:4.4.2/KTU84P/G7102DDUBNK1:user/release-keys
+ro.build.description=ms013gxx-user 4.4.2 KTU84P G7102DDUBNK1 release-keys
+persist.dsds.enabled=true
+persist.radio.multisim.config=dsds
+ro.telephony.ril_class=SamsungMSM8226DSRIL
+
 # System.prop for ms013g
 
 # RIL
@@ -13,6 +22,8 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
+telephony.lteOnGsmDevice=0,1
+ro.telephony.default_network=0,1
 
 # Audio and Media
 audio.offload.buffer.size.kb=32
@@ -56,6 +67,7 @@ ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 persist.data.netmgrd.qos.enable=false
 persist.radio.add_power_save=1
 ro.use_data_netmgrd=false
+persist.radio.apm_sim_not_pwdn=1
 
 # Sensors
 ro.qc.sdk.gestures.camera=false

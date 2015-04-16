@@ -63,6 +63,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 #       platform_app.te
 
 #Bliss-Config
-TARGET_TC_KERNEL := "4.9-saber"
+TARGET_TC_KERNEL := "4.8"
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
 
