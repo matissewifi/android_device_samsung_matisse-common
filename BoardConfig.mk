@@ -39,7 +39,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/ms013g
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_ms013g_eur_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 1024
@@ -55,12 +55,12 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 #TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/s3ve3g
 
 # SELinux
--include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/samsung/ms013g/sepolicy
+#-include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/samsung/ms013g/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-       hostapd.te \
-       platform_app.te
+#BOARD_SEPOLICY_UNION += \
+#       hostapd.te \
+#       platform_app.te
 
 #Bliss-Config
 TARGET_TC_KERNEL := "4.8"
