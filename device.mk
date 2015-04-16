@@ -37,7 +37,9 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.carrier.rc \
+    init.traget.rc
 
 # Thermal
 PRODUCT_COPY_FILES += \
