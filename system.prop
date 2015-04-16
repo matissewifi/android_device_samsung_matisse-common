@@ -1,12 +1,3 @@
-#
-#Devies Fingerprints
-#
-ro.build.fingerprint=samsung/ms013gxx/ms013g:4.4.2/KTU84P/G7102DDUBNK1:user/release-keys
-ro.build.description=ms013gxx-user 4.4.2 KTU84P G7102DDUBNK1 release-keys
-persist.dsds.enabled=true
-persist.radio.multisim.config=dsds
-ro.telephony.ril_class=SamsungMSM8226DSRIL
-
 # System.prop for ms013g
 
 # RIL
@@ -22,33 +13,34 @@ persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
+persist.dsds.enabled=true
+persist.radio.multisim.config=dsds
+ro.telephony.ril_class=SamsungMSM8226DSRIL
 telephony.lteOnGsmDevice=0,1
 ro.telephony.default_network=0,1
 
-# Audio and Media
+# Audio
+audio.offload.24bit.enable=false
 audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=true
-audio.offload.multiple.enabled=true
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
-av.offload.enable=true
-av.streaming.offload.enable=true
+audio.offload.gapless.enabled=false
+audio.offload.multiple.enabled=false
+audio.offload.pcm.enable=true
+av.offload.enable=false
+av.streaming.offload.enable=false
 media.aac_51_output_enabled=true
-mm.enable.qcom_parser=3314291
 mm.enable.smoothstreaming=true
 ro.qc.sdk.audio.fluencetype=none
-tunnel.audio.encode=true
+use.dedicated.device.for.voip=true
 use.voice.path.for.pcm.voip=false
 
 # Bluetooth
+qcom.bt.le_dev_pwr_class=1 
 ro.bluetooth.hfp.ver=1.6
 ro.qualcomm.bt.hci_transport=smd
 
-# Camera
-camera2.portability.force_api=1
-
 # Display
 debug.composition.type=c2d 
+debug.enabletr=0
 ro.opengles.version=196608
 ro.sf.lcd_density=320
 
@@ -66,8 +58,8 @@ ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 # Radio
 persist.data.netmgrd.qos.enable=false
 persist.radio.add_power_save=1
-ro.use_data_netmgrd=false
 persist.radio.apm_sim_not_pwdn=1
+ro.use_data_netmgrd=false
 
 # Sensors
 ro.qc.sdk.gestures.camera=false
