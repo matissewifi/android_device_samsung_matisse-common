@@ -1,13 +1,13 @@
 [
     {
         "remote": "github",
-        "repository": "aapav01/android_device_samsung_msm8226-common-1",
+        "repository": "MSM8226-Samsung/android_device_samsung_msm8226-common",
         "target_path": "device/samsung/msm8226-common",
-        "revision": "lp5.1"
+        "revision": "cm-12.1"
     },
     {
-        "remote": "cm",
-        "repository": "android_device_samsung_qcom-common",
+        "remote": "github",
+        "repository": "TeamBliss-Devices/android_device_samsung_qcom-common",
         "target_path": "device/samsung/qcom-common",
         "revision": "cm-12.0"
     },
@@ -15,13 +15,13 @@
         "remote": "cm",
         "repository": "android_device_qcom_common",
         "target_path": "device/qcom/common",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     },
     {
         "remote": "cm",
         "repository": "android_hardware_qcom_fm",
         "target_path": "hardware/qcom/fm",
-        "revision": "cm-12.0"
+        "revision": "cm-12.1"
     }
 ]
 

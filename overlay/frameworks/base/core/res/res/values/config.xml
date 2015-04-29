@@ -124,15 +124,15 @@
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
     <string-array translatable="false" name="config_tether_usb_regexs">
-        <item>"usb\\d"</item>
-        <item>"rndis\\d"</item>
+        <item>"rndis0"</item>
+        <item>"usb0"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
                   Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>"wlan\\d"</item>
+        <item>"wlan0"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -170,6 +170,27 @@
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+
+    <!-- Configure mobile tcp buffer sizes in the form:
+         rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
+         If no value is found for the rat-name in use, the system default will be applied.
+    -->
+
+    <string-array name="config_mobile_tcp_buffers">
+        <item>umts:4094,87380,110208,4096,16384,110208</item>
+        <item>hspa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsupa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsdpa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspap:4094,87380,1220608,4096,16384,1220608</item>
+        <item>edge:4093,26280,35040,4096,16384,35040</item>
+        <item>gprs:4092,8760,11680,4096,8760,11680</item>
+        <item>evdo:4094,87380,262144,4096,16384,262144</item>
+        <item>lte:524288,1048576,2097152,262144,524288,1048576</item>
+    </string-array>
+
+    <!-- Configure wifi tcp buffersizes in the form:
+         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,4525824,524288,1048576,4525824</string>
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
