@@ -22,9 +22,6 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 vendor/lib/libcsd-client.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
 
 # Bluetooth
 bin/btnvtool
@@ -169,24 +166,22 @@ cameradata/datapattern_front_420sp.yuv
 
 # DRM
 bin/qseecomd
-lib/libhdcp2.so
+framework/com.google.widevine.software.drm.jar
+vendor/libdrmdecrypt.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvdrm_L3.so
 vendor/lib/libwvm.so
-vendor/lib/libStDrvInt.so
-vendor/lib/libWVStreamControlAPI_L1.so
-lib/libWVphoneAPI.so
+vendor/lib/libWVStreamControlAPI_L3.so
 
 # GPS
--app/com.qualcomm.location/com.qualcomm.location.apk
+app/com.qualcomm.location/com.qualcomm.location.apk
 etc/permissions/com.qualcomm.location.xml
 lib/hw/flp.default.so
 lib/libloc_api_v02.so
@@ -202,6 +197,7 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libadreno_utils.so
+vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
@@ -224,12 +220,6 @@ etc/firmware/a330_pm4.fw
 bin/irsc_util
 etc/sec_config
 
-# Listen service
-vendor/lib/liblistenhardware.so
-vendor/lib/liblistenjni.so
-vendor/lib/liblistensoundmodel.so
-vendor/lib/liblisten.so
-
 # Media
 vendor/lib/libDivxDrm.so
 vendor/lib/libExtendedExtractor.so
@@ -243,16 +233,11 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libSHIMDivxDrm.so
--vendor/lib/libHevcSwDecoder.so
+vendor/lib/libHevcSwDecoder.so
 
 # Perf
 bin/mpdecision
 vendor/lib/libqc-opt.so
-
-# Postprocessing
-vendor/lib/libdisp-aba.so
-vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
 
 # Qualcomm framework
 vendor/lib/libdiag.so
@@ -271,7 +256,6 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
 # Radio
-bin/ATFWD-daemon
 bin/ds_fmc_appd
 bin/qmuxd
 bin/radish
@@ -283,21 +267,17 @@ lib/libcordon.so
 lib/libfactoryutil.so
 lib/libomission_avoidance.so
 lib/libreference-ril.so
+lib/libril.so
+lib/libsec-ril.so
 lib/libsecnativefeature.so
 lib/libsecril-client.so
-lib/libsec-ril.so
-lib/libsec-ril-dsds.so
-lib/libril.so
 vendor/lib/libconfigdb.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libxml.so
-lib/librilutils.so
 
 # Sensors
-lib/hw/sensors.msm8226.so
+vendor/lib/hw/sensors.msm8226.so
 lib/libyasalgo.so
-vendor/lib/libsensor1.so
-etc/sensor_def_qcomdev.conf
 
 # Thermal
 bin/thermal-engine
@@ -305,13 +285,7 @@ vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk
+app/TimeService/TimeService.apk
 bin/time_daemon
 vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
-
-# WiFi
-lib/libqsap_sdk.so
-
-# Misc
-bin/port-bridge
