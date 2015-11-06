@@ -47,9 +47,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc \
-    init.carrier.rc \
-    init.traget.rc
+    init.qcom.power.rc \
+    ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     lights.msm8226
