@@ -25,9 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import init.qcom.power.rc
 import init.qcom.usb.rc
-import init.target.rc
-import init.carrier.rc
 
 on early-init
 
@@ -84,8 +83,7 @@ on fs
 
     # Kickstart the Wireless subsystem
     write /dev/wcnss_wlan 1
-
-    #setprop ro.crypto.fuse_sdcard true
+    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
 on post-fs-data
 
@@ -279,6 +277,11 @@ on boot
 
     # IMEI
     mkdir /efs/imei 0775 radio radio
+    restorecon -R /efs
+
+    mkdir /efs/drm/playready 0775
+    chown drm system /efs/drm/playready
+    chmod 0775 /efs/drm/playready
 
     # for BT MAC address
     mkdir /efs/bluetooth 0775 radio system
@@ -434,8 +437,8 @@ on boot
     chmod 0660 /sys/class/graphics/fb0/csc_cfg
 
     # Display color calibration
-    #chown system system /sys/devices/virtual/graphics/fb0/rgb
-    #chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
+    chown system system /sys/devices/virtual/graphics/fb0/rgb
+    chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
 
     # OTG Test
     chown system radio /sys/class/host_notify/usb_otg/booster
@@ -466,6 +469,28 @@ on boot
     chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
     chown system radio /sys/class/sensors/accelerometer_sensor/vendor
     chown system radio /sys/class/sensors/accelerometer_sensor/name
+    chown system input /sys/class/input/input3/data
+    chown system input /sys/class/input/input3/delay
+    chown system input /sys/class/input/input3/enable
+    chown system input /sys/class/input/input3/filter_enable
+    chown system input /sys/class/input/input3/modalias
+    chown system input /sys/class/input/input3/name
+    chown system input /sys/class/input/input3/offset
+    chown system input /sys/class/input/input3/phys
+    chown system input /sys/class/input/input3/position
+    chown system input /sys/class/input/input3/properties
+    chown system input /sys/class/input/input3/threshold
+    chown system input /sys/class/input/input5/data
+    chown system input /sys/class/input/input5/delay
+    chown system input /sys/class/input/input5/enable
+    chown system input /sys/class/input/input5/filter_enable
+    chown system input /sys/class/input/input5/modalias
+    chown system input /sys/class/input/input5/name
+    chown system input /sys/class/input/input5/offset
+    chown system input /sys/class/input/input5/phys
+    chown system input /sys/class/input/input5/position
+    chown system input /sys/class/input/input5/properties
+    chown system input /sys/class/input/input5/threshold
 
     # Gyro_sensor
     chown system radio /sys/class/sensors/gyro_sensor/power_on
@@ -479,20 +504,78 @@ on boot
     chown system radio /sys/class/sensors/light_sensor/raw_data
     chown system radio /sys/class/sensors/light_sensor/vendor
     chown system radio /sys/class/sensors/light_sensor/name
+    chown system input /sys/class/input/input5/id
+    chown system input /sys/class/input/input5/poll_delay
 
     # Magnetic_sensor
     chown system radio /sys/class/sensors/magnetic_sensor/selftest
     chown system radio /sys/class/sensors/magnetic_sensor/raw_data
     chown system radio /sys/class/sensors/magnetic_sensor/vendor
     chown system radio /sys/class/sensors/magnetic_sensor/name
+    chown system radio /sys/class/sensors/magnetic_sensor/adc
+    chown system radio /sys/class/sensors/magnetic_sensor/status
+    chown compass input /sys/class/input/input5/dynamic_matrix
+    chown compass input /sys/class/input/input5/offsets
+    chown compass input /sys/class/input/input7/dynamic_matrix
+    chown compass input /sys/class/input/input7/offsets
+    chown system input /sys/class/input/input2/name
+    chown system input /sys/class/input/input2/poll
+    chown system input /sys/class/input/input2/id
+    chown system input /sys/class/input/input4/name
+    chown system input /sys/class/input/input4/poll
+    chown system input /sys/class/input/input4/id
+    chown system input /sys/class/input/input4/data
+    chown system input /sys/class/input/input4/delay
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/filter_enable
+    chown system input /sys/class/input/input4/filter_len
+    chown system input /sys/class/input/input4/filter_noise
+    chown system input /sys/class/input/input4/filter_threshold
+    chown system input /sys/class/input/input4/position
+    chown system input /sys/class/input/input5/name
+    chown system input /sys/class/input/input5/poll
+    chown system input /sys/class/input/input5/id
+    chown system input /sys/class/input/input5/distortion
+    chown system input /sys/class/input/input5/self_test
+    chown system input /sys/class/input/input5/threshold
+    chown system input /sys/class/input/input6/name
+    chown system input /sys/class/input/input6/poll
+    chown system input /sys/class/input/input6/id
+    chown system input /sys/class/input/input6/data
+    chown system input /sys/class/input/input6/delay
+    chown system input /sys/class/input/input6/enable
+    chown system input /sys/class/input/input6/filter_enable
+    chown system input /sys/class/input/input6/filter_len
+    chown system input /sys/class/input/input6/filter_noise
+    chown system input /sys/class/input/input6/filter_threshold
+    chown system input /sys/class/input/input6/position
+    chown system input /sys/class/input/input7/distortion
+    chown system input /sys/class/input/input7/self_test
+    chown system input /sys/class/input/input7/threshold
+    chown system input /dev/alps_io
+    chown system input /system/etc/param.dat
+    chown system input /system/etc/alp_cal.dat
 
     # Proximity_sensor
     chown system radio /sys/class/sensors/proximity_sensor/state
     chown system radio /sys/class/sensors/proximity_sensor/prox_avg
     chown system radio /sys/class/sensors/proximity_sensor/prox_cal
+    chown system radio /sys/class/sensors/proximity_sensor/prox_cal2
+    chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
     chown system radio /sys/class/sensors/proximity_sensor/prox_tresh
+    chown system radio /sys/class/sensors/proximity_sensor/raw_data
     chown system radio /sys/class/sensors/proximity_sensor/vendor
+    chown system radio /sys/class/sensors/proximity_sensor/state
     chown system radio /sys/class/sensors/proximity_sensor/name
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/id
+
+    # mpu6500_input
+    chown system input /sys/class/input/input3/acc_enable
+    chown system input /sys/class/input/input3/acc_delay
+    chown system input /sys/class/input/input3/gyro_enable
+    chown system input /sys/class/input/input3/gyro_delay
+    chown system input /sys/class/input/input3/self_test
 
     # Torch
     chown system system /sys/class/leds/led:flash_torch/brightness
@@ -557,6 +640,8 @@ on boot
     chmod 0664 /sys/class/input/input0/enabled
     chmod 0664 /sys/class/input/input1/enabled
     chmod 0664 /sys/class/input/input2/enabled
+    chown system system /sys/class/sec/sec_touchkey/brightness
+    chmod 0664 /sys/class/sec/sec_touchkey/brightness
 
     # Permission for touchkey
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
@@ -606,18 +691,17 @@ service at_distributor /system/bin/at_distributor
     group radio log
 	
 # for multi rild
-service ril-daemon2 /system/bin/rild -s rild2 -ds rild-debug1 -l /system/lib/libsec-ril-dsds.so
+service ril-daemon1 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
-    socket rild-debug1 stream 660 radio system
+    socket rild-debug2 stream 660 radio system
     user root
-    group radio cache inet misc audio log qcom_diag sdcard_r shell sdcard_rw system drmrpc
+    group radio cache inet misc audio log qcom_diag system drmrpc sdcard_r sdcard_rw shell
 
 service adsprpcd /system/bin/adsprpcd
     class main
     user media
     group media
-
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
@@ -628,10 +712,6 @@ service audiod /system/bin/audiod
     class late_start
     user system
     group system
-
-service charger /charger
-    class charger
-    critical
 
 on property:vold.decrypt=trigger_restart_framework
     start config_bluetooth
@@ -762,10 +842,11 @@ service thermal-engine /system/bin/thermal-engine -c /etc/thermal-engine-8226.co
     user root
     group root
 
-service time_daemon /system/bin/time_daemon
-    class late_start
-    user root
-    group root
+service timekeep /system/bin/timekeep restore
+   class late_start
+   user root
+   group root
+   oneshot
 
 service wcnss-service /system/bin/wcnss_service
     class late_start
@@ -871,119 +952,8 @@ on property:crypto.driver.load=0
     exec /system/bin/rmmod qcedev.ko
     exec /system/bin/rmmod qce.ko
 
-on charger
-    mount_all fstab.qcom
-    class_start charger
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu2/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu3/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu0/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu1/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu2/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu0/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu1/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu2/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu0/power_collapse/idle_enabled 0
-    write /sys/module/msm_pm/modes/cpu1/power_collapse/idle_enabled 0
-    write /sys/module/msm_pm/modes/cpu2/power_collapse/idle_enabled 0
-    write /sys/module/msm_pm/modes/cpu3/power_collapse/idle_enabled 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "powersave"
-
-# CM Performance profiles
-on property:sys.boot_completed=1
-    write /sys/module/lpm_levels/enable_low_power/l2 4
-    write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu2/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu3/power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu0/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu1/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu2/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/suspend_enabled 1
-    write /sys/module/msm_pm/modes/cpu0/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu1/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu2/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/idle_enabled 1
-    write /sys/module/msm_pm/modes/cpu0/power_collapse/idle_enabled 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/module/msm_thermal/core_control/enabled 1
-    chown root system /sys/devices/system/cpu/cpu1/online
-    chown root system /sys/devices/system/cpu/cpu2/online
-    chown root system /sys/devices/system/cpu/cpu3/online
-    chmod 664 /sys/devices/system/cpu/cpu1/online
-    chmod 664 /sys/devices/system/cpu/cpu2/online
-    chmod 664 /sys/devices/system/cpu/cpu3/online
-
-    # Post boot services
-    start mpdecision
-
-on property:init.svc.bootanim=stopped
-    write /sys/block/mmcblk0/queue/scheduler row
-
-    # Configure interactive governor
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 20000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 998400
-    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 100000
-
-    # Configure CPU boost
-    # write /sys/module/cpu_boost/parameters/boost_ms 20
-    write /sys/module/cpu_boost/parameters/sync_threshold 600000
-    write /sys/module/cpu_boost/parameters/input_boost_freq 998400
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
-
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
-
-# Powersave
-on property:sys.perf.profile=0
-    start mpdecision
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor conservative
-    write /sys/class/devfreq/qcom,cpubw.68/governor powersave
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor powersave
-
-# Balanced
-on property:sys.perf.profile=1
-    start mpdecision
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
-    write /sys/class/devfreq/qcom,cpubw.68/governor msm_cpufreq
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-
-# High performance
-on property:sys.perf.profile=2
-    stop mpdecision
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor performance
-    write /sys/class/devfreq/qcom,cpubw.68/governor performance
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor performance
+# Dual-sim support
+on property:persist.radio.multisim.config=dsds
+    stop ril-daemon
+    start ril-daemon
+    start ril-daemon1
