@@ -18,6 +18,3 @@ Camera  | 8 MP, 3264 x 2448 pixels
 ![Galaxy Grand 2](http://cdn1.xda-developers.com/devdb/deviceForum/screenshots/2820/20140223T030741.jpg "Galaxy Grand 2")
 
 This branch is for building CyanogenMod 12.1 Firmware.
-
-TODO:
-	FIX 2nd SIM voice
