@@ -27,6 +27,11 @@
 
 service charger /charger
     class charger
+    seclabel u:r:healthd:s0
+
+on charger
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system wait ro
+    class_start charger
 
 # CM Performance profiles
 on property:sys.boot_completed=1
