@@ -27,10 +27,11 @@
 
 service charger /charger
     class charger
+    critical
     seclabel u:r:healthd:s0
 
 on charger
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system wait ro
+    mount_all fstab.qcom
     class_start charger
 
 # CM Performance profiles
