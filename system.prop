@@ -11,7 +11,6 @@ ro.telephony.ril_class=SamsungMSM8226RIL
 
 #Radio
 rild.libpath=/system/lib/libsec-ril.so
-rild.libpath2=/system/lib/libsec-ril-dsds.so
 rild.libargs=-d /dev/smd0
 
 # Audio
