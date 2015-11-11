@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
 import init.qcom.usb.rc
+import init.qcom.power.rc
 
 on early-init
 
@@ -231,14 +231,6 @@ on post-fs-data
     chmod 0644 /dev/icdr
     chown system system /dev/tzic
 
-    # Permissions for svc led
-    chown system system /sys/class/sec/led/led_r
-    chown system system /sys/class/sec/led/led_g
-    chown system system /sys/class/sec/led/led_b
-    chown system system /sys/class/sec/led/led_pattern
-    chown system system /sys/class/sec/led/led_blink
-    chown system system /sys/class/sec/led/led_lowpower
-
     # symlink to bugreport storage location
     symlink /data/data/com.android.shell/files/bugreports /data/bugreports
 
@@ -439,10 +431,6 @@ on boot
     # Display color calibration
     chown system system /sys/devices/virtual/graphics/fb0/rgb
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
-
-    # OTG Test
-    chown system radio /sys/class/host_notify/usb_otg/booster
-    chmod 0660 /sys/class/host_notify/usb_otg/booster
 
     # Essential node for usbservice
     mkdir /dev/bus/ 755 root root
@@ -684,30 +672,10 @@ on boot
     write /proc/sys/net/core/wmem_max  2097152
 
 # Services begin here
-# RIL
-service at_distributor /system/bin/at_distributor
-    class late_start
-    user root
-    group radio log
-	
-# for multi rild
-service ril-daemon1 /system/bin/rild -l /system/lib/libsec-ril-dsds.so -c 2
-    class main
-    socket rild2 stream 660 root radio
-    socket rild-debug2 stream 660 radio system
-    user root
-    group radio cache inet misc audio log qcom_diag system drmrpc sdcard_r sdcard_rw shell
-    disabled
-
 service adsprpcd /system/bin/adsprpcd
     class main
     user media
     group media
-
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
 
 service audiod /system/bin/audiod
     class late_start
@@ -720,15 +688,6 @@ on property:vold.decrypt=trigger_restart_framework
 service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     class core
     user root
-    oneshot
-
-on property:persist.data.ds_fmc_app.mode=1
-    start ds_fmc_appd
-
-service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
-    class late_start
-    group radio wifi inet
-    disabled
     oneshot
 
 #service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
@@ -958,3 +917,11 @@ on property:persist.radio.multisim.config=dsds
     stop ril-daemon
     start ril-daemon
     start ril-daemon1
+
+service ril-daemon1 /system/bin/rild -l /system/lib/libsec-ril-dsds.so -c 2
+    class main
+    socket rild2 stream 660 root radio
+    socket rild-debug2 stream 660 radio system
+    user root
+    group radio cache inet misc audio log qcom_diag system drmrpc sdcard_r sdcard_rw shell
+    disabled
