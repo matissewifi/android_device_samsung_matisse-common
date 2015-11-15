@@ -13,13 +13,8 @@ rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/smd0
 
 # Audio
-audio.offload.24bit.enable=false
-audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=false
-audio.offload.multiple.enabled=false
 audio.offload.pcm.enable=true
 av.offload.enable=false
-av.streaming.offload.enable=false
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
 ro.qc.sdk.audio.fluencetype=none
