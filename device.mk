@@ -40,15 +40,8 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.crda.sh \
-    init.qcom.bt.sh
-
-PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.qcom.power.rc \
-    ueventd.qcom.rc
+    init.target.rc
 
 PRODUCT_PACKAGES += \
     lights.msm8226
