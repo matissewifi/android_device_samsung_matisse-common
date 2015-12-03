@@ -66,13 +66,5 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0
 endif
 
-# system prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    telephony.lteOnGsmDevice=0 \
-    ro.telephony.default_network=3 \
-    persist.radio.multisim.config=dsds \
-    ro.multisim.simslotcount=2 \
-    ro.multisim.set_audio_params=true
-
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
