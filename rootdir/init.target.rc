@@ -1,0 +1,143 @@
+# Copyright (c) 2009-2012, 2014, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+on boot
+    #Accelerometer-BMA254
+    chown system input /sys/class/input/input3/data
+    chown system input /sys/class/input/input3/delay
+    chown system input /sys/class/input/input3/enable
+    chown system input /sys/class/input/input3/filter_enable
+    chown system input /sys/class/input/input3/modalias
+    chown system input /sys/class/input/input3/name
+    chown system input /sys/class/input/input3/offset
+    chown system input /sys/class/input/input3/phys
+    chown system input /sys/class/input/input3/position
+    chown system input /sys/class/input/input3/properties
+    chown system input /sys/class/input/input3/threshold
+    chown system input /sys/class/input/input5/data
+    chown system input /sys/class/input/input5/delay
+    chown system input /sys/class/input/input5/enable
+    chown system input /sys/class/input/input5/filter_enable
+    chown system input /sys/class/input/input5/modalias
+    chown system input /sys/class/input/input5/name
+    chown system input /sys/class/input/input5/offset
+    chown system input /sys/class/input/input5/phys
+    chown system input /sys/class/input/input5/position
+    chown system input /sys/class/input/input5/properties
+    chown system input /sys/class/input/input5/threshold
+
+    #cm36651 Proximity sensor
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/id
+
+    #cm36651 Light sensor
+    chown system input /sys/class/input/input5/id
+    chown system input /sys/class/input/input5/poll_delay
+
+    # alps/hscd Magnetic sensor
+    chown system input /sys/class/input/input2/name
+    chown system input /sys/class/input/input2/poll
+    chown system input /sys/class/input/input2/id
+    chown system input /sys/class/input/input5/name
+    chown system input /sys/class/input/input5/poll
+    chown system input /sys/class/input/input5/id
+    chown system input /dev/alps_io
+    chown system input /system/etc/param.dat
+    chown system input /system/etc/alp_cal.dat
+
+    #yas Geomagnetic sensor
+    chown system input /sys/class/input/input4/name
+    chown system input /sys/class/input/input4/poll
+    chown system input /sys/class/input/input4/id
+    chown system input /sys/class/input/input4/data
+    chown system input /sys/class/input/input4/delay
+    chown system input /sys/class/input/input4/enable
+    chown system input /sys/class/input/input4/filter_enable
+    chown system input /sys/class/input/input4/filter_len
+    chown system input /sys/class/input/input4/filter_noise
+    chown system input /sys/class/input/input4/filter_threshold
+    chown system input /sys/class/input/input4/position
+    chown system input /sys/class/input/input6/name
+    chown system input /sys/class/input/input6/poll
+    chown system input /sys/class/input/input6/id
+    chown system input /sys/class/input/input6/data
+    chown system input /sys/class/input/input6/delay
+    chown system input /sys/class/input/input6/enable
+    chown system input /sys/class/input/input6/filter_enable
+    chown system input /sys/class/input/input6/filter_len
+    chown system input /sys/class/input/input6/filter_noise
+    chown system input /sys/class/input/input6/filter_threshold
+    chown system input /sys/class/input/input6/position
+
+    # yas Geomagnetic_raw sensor
+    chown compass input /sys/class/input/input5/dynamic_matrix
+    chown compass input /sys/class/input/input5/offsets
+    chown compass input /sys/class/input/input7/dynamic_matrix
+    chown compass input /sys/class/input/input7/offsets
+    chown system input /sys/class/input/input5/distortion
+    chown system input /sys/class/input/input5/self_test
+    chown system input /sys/class/input/input5/threshold
+    chown system input /sys/class/input/input7/distortion
+    chown system input /sys/class/input/input7/self_test
+    chown system input /sys/class/input/input7/threshold
+
+    # Sensors
+    chown system radio /sys/class/sensors/magnetic_sensor/selftest
+    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
+    chown system radio /sys/class/sensors/magnetic_sensor/adc
+    chown system radio /sys/class/sensors/magnetic_sensor/name
+    chown system radio /sys/class/sensors/magnetic_sensor/vendor
+    chown system radio /sys/class/sensors/magnetic_sensor/status
+
+    chown system radio /sys/class/sensors/accelerometer_sensor/name
+    chown system radio /sys/class/sensors/accelerometer_sensor/calibration
+    chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
+    chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
+    chown system radio /sys/class/sensors/accelerometer_sensor/vendor
+
+    chown system radio /sys/class/sensors/gyro_sensor/name
+    chown system radio /sys/class/sensors/gyro_sensor/power_on
+    chown system radio /sys/class/sensors/gyro_sensor/selftest
+    chown system radio /sys/class/sensors/gyro_sensor/temperature
+    chown system radio /sys/class/sensors/gyro_sensor/vendor
+
+    chown system radio /sys/class/sensors/light_sensor/name
+    chown system radio /sys/class/sensors/light_sensor/lux
+    chown system radio /sys/class/sensors/light_sensor/raw_data
+    chown system radio /sys/class/sensors/light_sensor/vendor
+
+    chown system radio /sys/class/sensors/proximity_sensor/name
+    chown system radio /sys/class/sensors/proximity_sensor/prox_avg
+    chown system radio /sys/class/sensors/proximity_sensor/prox_cal
+    chown system radio /sys/class/sensors/proximity_sensor/prox_cal2
+    chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
+    chown system radio /sys/class/sensors/proximity_sensor/prox_thresh
+    chown system radio /sys/class/sensors/proximity_sensor/raw_data
+    chown system radio /sys/class/sensors/proximity_sensor/state
+    chown system radio /sys/class/sensors/proximity_sensor/vendor
+
+    # efs
+    restorecon -R /efs
