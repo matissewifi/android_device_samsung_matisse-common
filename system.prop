@@ -2,5 +2,5 @@
 persist.radio.multisim.config=dsds
 ro.multisim.set_audio_params=true
 ro.multisim.simslotcount=2
-ro.telephony.default_network=3,1
+ro.telephony.default_network=0,1
 telephony.lteOnGsmDevice=0
