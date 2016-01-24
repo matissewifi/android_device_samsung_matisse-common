@@ -1,3 +1,0 @@
-add_lunch_combo cm_ms013g-eng
-add_lunch_combo cm_ms013g-user
-add_lunch_combo cm_ms013g-userdebug
