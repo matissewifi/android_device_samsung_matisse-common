@@ -23,10 +23,22 @@ vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
 vendor/lib/libcsd-client.so
 
+# DIAG-Samsung-Modem
+etc/Diag.cfg
+etc/Diag_audio.cfg
+etc/Diag_gps.cfg
+etc/Diag_volte.cfg
+etc/Diag_zero.cfg
+etc/alp_cal.dat
+etc/plmn_delta.bin
+etc/plmn_se13.bin
+etc/srm.bin
+
 # Bluetooth
 bin/btnvtool
 bin/hci_qcomm_init
 vendor/lib/libbtnv.so
+#vendor/lib/liboi_sbc_decoder.so
 
 # Camera
 bin/mm-qcamera-daemon
@@ -45,12 +57,33 @@ lib/libmmcamera_wavelet_lib.so
 lib/libmmcamera2_stats_algorithm.so
 lib/libmmjpeg_interface.so
 lib/libqomx_core.so
+vendor/lib/libjpegdhw.so
+vendor/lib/libjpegehw.so
 vendor/lib/libactuator_ak7345_camcorder.so
 vendor/lib/libactuator_ak7345_camera.so
 vendor/lib/libactuator_dw9804_camcorder.so
 vendor/lib/libactuator_dw9804_camera.so
-vendor/lib/libjpegdhw.so
-vendor/lib/libjpegehw.so
+vendor/lib/libactuator_dw9804k_camcorder.so
+vendor/lib/libactuator_dw9804k_camera.so
+vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_hdr_gb_lib.so
+vendor/lib/libmmcamera_image_stab.so
+vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera_imx135.so
+vendor/lib/libmmcamera_imx175.so
+vendor/lib/libmmcamera_imx219.so
+vendor/lib/libmmcamera_s5k4h5yb.so
+vendor/lib/libmmcamera_s5k6a3yx.so
+vendor/lib/libmmcamera_rohm_brce064gwz_eeprom.so
+vendor/lib/libmmcamera_s5k3h5xa.so
+vendor/lib/libmmcamera_s5k4ecgx.so
+vendor/lib/libmmcamera_s5k4h5ya.so
+vendor/lib/libmmcamera_s5k6b2yx.so
+vendor/lib/libmmcamera_s5k8b1yx.so
+vendor/lib/libmmcamera_sr030pc50.so
+vendor/lib/libmmcamera_sr130pc20.so
+vendor/lib/libmmcamera_sr200pc20.so
+vendor/lib/libmmcamera_sr352.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -61,25 +94,6 @@ vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
-vendor/lib/libmmcamera_faceproc.so
-vendor/lib/libmmcamera_hdr_gb_lib.so
-vendor/lib/libmmcamera_image_stab.so
-vendor/lib/libmmcamera_imglib.so
-vendor/lib/libmmcamera_imx135.so
-vendor/lib/libmmcamera_imx175.so
-vendor/lib/libmmcamera_imx219.so
-vendor/lib/libmmcamera_rohm_brce064gwz_eeprom.so
-vendor/lib/libmmcamera_s5k3h5xa.so
-vendor/lib/libmmcamera_s5k4ecgx.so
-vendor/lib/libmmcamera_s5k4h5ya.so
-vendor/lib/libmmcamera_s5k4h5yb.so
-vendor/lib/libmmcamera_s5k6a3yx.so
-vendor/lib/libmmcamera_s5k6b2yx.so
-vendor/lib/libmmcamera_s5k8b1yx.so
-vendor/lib/libmmcamera_sr030pc50.so
-vendor/lib/libmmcamera_sr130pc20.so
-vendor/lib/libmmcamera_sr200pc20.so
-vendor/lib/libmmcamera_sr352.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
@@ -88,27 +102,34 @@ vendor/lib/libmmQTA.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
+vendor/lib/libsensor1.so
 
-# Camera chromatix
+# Camera Chormatix
 lib/E08QL_libTsAe.so
 lib/E08QL_libTsAf.so
 lib/E08QL_libTs_J_Accm.so
 lib/E08QL_libTs_J_Awb.so
 lib/libAfSingle.so
-lib/libchromatix_s5k6a3yx_smart_stay.so
-lib/libchromatix_s5k6b2yx_preview.so
-lib/libchromatix_s5k6a3yx_vt_hd.so
-lib/libchromatix_s5k6b2yx_smart_stay.so
-lib/libchromatix_s5k6a3yx_vt.so
-lib/libchromatix_s5k6b2yx_vt_hd.so
-lib/libchromatix_s5k6b2yx_common.so
-lib/libchromatix_s5k6b2yx_vt.so
-lib/libchromatix_s5k6b2yx_default_video.so
-lib/libchromatix_s5k6b2yx_zslshot.so
 lib/libTsAe.so
 lib/libTsAf.so
 lib/libTs_J_Accm.so
 lib/libTs_J_Awb.so
+lib/libarcsoft_flawlessface.so
+lib/libarcsoft_night_shot.so
+lib/libarcsoft_panorama_burstcapture.so
+lib/libarcsoft_picaction.so
+lib/libarcsoft_sensorndk.so
+lib/libarcsoft_skin_soften.so
+lib/libchromatix_s5k6a3yx_smart_stay.so
+lib/libchromatix_s5k6a3yx_vt.so
+lib/libchromatix_s5k6a3yx_vt_hd.so
+lib/libchromatix_s5k6b2yx_common.so
+lib/libchromatix_s5k6b2yx_default_video.so
+lib/libchromatix_s5k6b2yx_preview.so
+lib/libchromatix_s5k6b2yx_smart_stay.so
+lib/libchromatix_s5k6b2yx_vt.so
+lib/libchromatix_s5k6b2yx_vt_hd.so
+lib/libchromatix_s5k6b2yx_zslshot.so
 vendor/lib/B08QT_libchromatix_imx175_common_res0.so
 vendor/lib/B08QT_libchromatix_imx175_common_res1.so
 vendor/lib/B08QT_libchromatix_imx175_common.so
@@ -120,31 +141,31 @@ vendor/lib/B08QT_libchromatix_imx175_snapshot.so
 vendor/lib/B08QT_libchromatix_imx175_video_hd.so
 vendor/lib/B08QT_libchromatix_imx175_zslshot.so
 vendor/lib/B08QT_libchromatix_imx175_zsl.so
+vendor/lib/C08QT_libchromatix_imx175_common.so
 vendor/lib/C08QT_libchromatix_imx175_common_res0.so
 vendor/lib/C08QT_libchromatix_imx175_common_res1.so
-vendor/lib/C08QT_libchromatix_imx175_common.so
 vendor/lib/C08QT_libchromatix_imx175_default_video.so
 vendor/lib/C08QT_libchromatix_imx175_liveshot.so
 vendor/lib/C08QT_libchromatix_imx175_preview.so
 vendor/lib/C08QT_libchromatix_imx175_snapshot.so
 vendor/lib/C08QT_libchromatix_imx175_video_hd.so
-vendor/lib/C08QT_libchromatix_imx175_zslshot.so
 vendor/lib/C08QT_libchromatix_imx175_zsl.so
+vendor/lib/C08QT_libchromatix_imx175_zslshot.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_common.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_common_res0.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_common_res1.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_common.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_default_video.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_liveshot.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_panorama.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_preview.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_snapshot.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_video_hd.so
-vendor/lib/E08QL_libchromatix_s5k4h5yb_zslshot.so
 vendor/lib/E08QL_libchromatix_s5k4h5yb_zsl.so
+vendor/lib/E08QL_libchromatix_s5k4h5yb_zslshot.so
 vendor/lib/libchromatix_imx175_common.so
 vendor/lib/libchromatix_imx175_preview.so
-vendor/lib/libchromatix_imx219_common_res0.so
 vendor/lib/libchromatix_imx219_common.so
+vendor/lib/libchromatix_imx219_common_res0.so
 vendor/lib/libchromatix_imx219_default_video.so
 vendor/lib/libchromatix_imx219_liveshot.so
 vendor/lib/libchromatix_imx219_panorama.so
@@ -163,8 +184,8 @@ vendor/lib/libchromatix_s5k8b1yx_preview.so
 vendor/lib/libchromatix_s5k8b1yx_smart_stay.so
 vendor/lib/libchromatix_s5k8b1yx_snapshot.so
 vendor/lib/libchromatix_s5k8b1yx_video.so
-vendor/lib/libchromatix_s5k8b1yx_vt_hd.so
 vendor/lib/libchromatix_s5k8b1yx_vt.so
+vendor/lib/libchromatix_s5k8b1yx_vt_hd.so
 vendor/lib/libchromatix_s5k8b1yx_zslshot.so
 
 # Camera firmware
@@ -178,9 +199,9 @@ cameradata/datapattern_front_420sp.yuv
 
 # DRM
 bin/qseecomd
-lib/drm/libdrmwvmplugin.so
-lib/libdrmdecrypt.so
-lib/libwvm.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
@@ -188,8 +209,8 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/mediadrm/libwvdrmengine.so
 
 # CNE
 vendor/lib/libcneapiclient.so
@@ -197,10 +218,6 @@ vendor/lib/libcneconn.so
 vendor/lib/libcneqmiutils.so
 vendor/lib/libNimsWrap.so
 vendor/lib/libxml.so
-#vendor/lib/libcne.so
-#vendor/lib/libmasc.so
-#vendor/lib/libvendorconn.so
-#vendor/lib/libwqe.so
 
 # Listen service
 vendor/lib/liblistenhardware.so
@@ -225,7 +242,6 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libadreno_utils.so
-vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
@@ -236,7 +252,6 @@ vendor/lib/libRSDriver_adreno.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libsc-a3xx.so
-vendor/lib/libscale.so
 
 # Graphics firmware
 etc/firmware/a300_pfp.fw
@@ -259,39 +274,26 @@ vendor/lib/libSHIMDivxDrm.so
 bin/mpdecision
 vendor/lib/libqc-opt.so
 
-# Qualcomm framework
-vendor/lib/libdiag.so
-vendor/lib/libdsutils.so
-vendor/lib/libidl.so
-vendor/lib/libqcci_legacy.so
-vendor/lib/libqmi.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_client_qmux.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_encdec.so
-vendor/lib/libqmiservices.so
-
 # Radio
-bin/ds_fmc_appd
-bin/qmuxd
-bin/radish
-bin/rfs_access
-bin/rild
-bin/rmt_storage
 lib/libatparser.so
 lib/libcordon.so
 lib/libfactoryutil.so
 lib/libomission_avoidance.so
-lib/libreference-ril.so
-lib/libril.so
-lib/librilutils.so
-lib/libsec-ril.so
-lib/libsec-ril-dsds.so
-lib/libsecnativefeature.so
-lib/libsecril-client.so
-vendor/lib/libconfigdb.so
-vendor/lib/libril-qcril-hook-oem.so
+
+# Sensors
+vendor/lib/hw/sensors.msm8226.so
+lib/libyasalgo.so
+
+# Thermal
+bin/thermal-engine
+vendor/lib/libthermalclient.so
+vendor/lib/libthermalioctl.so
+
+# Time services
+app/TimeService/TimeService.apk
+bin/time_daemon
+vendor/lib/libtime_genoff.so
+vendor/lib/libTimeService.so
 
 # WFD
 vendor/lib/libwfdcommonutils.so
@@ -310,17 +312,3 @@ vendor/lib/libwfduibcsrcinterface.so
 vendor/lib/libmmwfdinterface.so
 vendor/lib/libmmwfdsinkinterface.so
 vendor/lib/libmmwfdsrcinterface.so
-
-# Sensors
-vendor/lib/hw/sensors.msm8226.so
-
-# Thermal
-bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib/libthermalioctl.so
-
-# Time services
-app/TimeService/TimeService.apk
-bin/time_daemon
-vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so

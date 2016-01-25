@@ -16,7 +16,7 @@
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Proprietary files
-$(call inherit-product, vendor/samsung/ms013g/ms013g-vendor.mk)
+$(call inherit-product, vendor/samsung/ms01-common/ms01-common-vendor.mk)
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -63,7 +63,8 @@ PRODUCT_COPY_FILES += \
 ifneq ($(TARGET_BUILD_VARIANT),user) 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
-    ro.adb.secure=0
+    ro.adb.secure=0 \
+    persist.sys.usb.config=mtp,adb
 endif
 
 # Inherit from qcom-common
