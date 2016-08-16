@@ -240,3 +240,6 @@ vendor/lib/libTimeService.so
 
 # Wi-Fi
 etc/wifi/wpa_supplicant.conf
+
+# Graphics
+vendor/lib/libuiblur.so 
