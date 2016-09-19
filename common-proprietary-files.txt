@@ -21,18 +21,6 @@ vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
-vendor/lib/libcsd-client.so
-
-# DIAG-Samsung-Modem
-etc/Diag.cfg
-etc/Diag_audio.cfg
-etc/Diag_gps.cfg
-etc/Diag_volte.cfg
-etc/Diag_zero.cfg
-etc/alp_cal.dat
-etc/plmn_delta.bin
-etc/plmn_se13.bin
-etc/srm.bin
 
 # Bluetooth
 bin/btnvtool
@@ -43,12 +31,8 @@ vendor/lib/libbtnv.so
 # Camera
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8226.so
-lib/libarcsoft_flawlessface.so
-lib/libarcsoft_night_shot.so
 lib/libarcsoft_panorama_burstcapture.so
-lib/libarcsoft_picaction.so
 lib/libarcsoft_sensorndk.so
-lib/libarcsoft_skin_soften.so
 lib/libmmcamera_cac.so
 lib/libmmcamera_cac2_lib.so
 lib/libmmcamera_fidelix_eeprom.so
@@ -98,7 +82,6 @@ vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmQSM.so
-vendor/lib/libmmQTA.so
 vendor/lib/liboemcamera.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
@@ -114,12 +97,8 @@ lib/libTsAe.so
 lib/libTsAf.so
 lib/libTs_J_Accm.so
 lib/libTs_J_Awb.so
-lib/libarcsoft_flawlessface.so
-lib/libarcsoft_night_shot.so
 lib/libarcsoft_panorama_burstcapture.so
-lib/libarcsoft_picaction.so
 lib/libarcsoft_sensorndk.so
-lib/libarcsoft_skin_soften.so
 lib/libchromatix_s5k6a3yx_smart_stay.so
 lib/libchromatix_s5k6a3yx_vt.so
 lib/libchromatix_s5k6a3yx_vt_hd.so
@@ -199,9 +178,10 @@ cameradata/datapattern_front_420sp.yuv
 
 # DRM
 bin/qseecomd
-vendor/lib/drm/libdrmwvmplugin.so
+lib/drm/libdrmwvmplugin.so
+lib/libdrmdecrypt.so
+lib/libwvm.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
@@ -209,7 +189,6 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 vendor/lib/libwvdrm_L1.so
-vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
 # CNE
@@ -226,14 +205,11 @@ vendor/lib/liblisten.so
 vendor/lib/liblistensoundmodel.so
 
 # GPS
-app/com.qualcomm.location/com.qualcomm.location.apk
-etc/permissions/com.qualcomm.location.xml
-lib/hw/flp.default.so
 lib/libloc_api_v02.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
-vendor/lib/liblocationservice.so
+vendor/lib/hw/flp.default.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
@@ -281,8 +257,7 @@ lib/libfactoryutil.so
 lib/libomission_avoidance.so
 
 # Sensors
-vendor/lib/hw/sensors.msm8226.so
-lib/libyasalgo.so
+lib/hw/sensors.msm8226.so
 
 # Thermal
 bin/thermal-engine
