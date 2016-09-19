@@ -46,13 +46,13 @@ else
   fi
 fi
 
-BASE=../../../vendor/$VENDOR/ms01-common/proprietary
+BASE=../../../vendor/$VENDOR/matisse-common/proprietary
 rm -rf $BASE/*
 
 DEVBASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $DEVBASE/*
 
-extract ../../$VENDOR/ms01-common/proprietary-files.txt $BASE
+extract ../../$VENDOR/matisse-common/proprietary-files.txt $BASE
 extract ../../$VENDOR/$DEVICE/proprietary-files.txt $DEVBASE
 
 ./setup-makefiles.sh

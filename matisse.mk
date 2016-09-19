@@ -14,9 +14,26 @@
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+PRODUCT_CHARACTERISTICS := tablet
 
 # Proprietary files
-$(call inherit-product, vendor/samsung/ms01-common/ms01-common-vendor.mk)
+$(call inherit-product, vendor/samsung/matisse-common/matisse-common-vendor.mk)
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+
+# Input device
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
+    $(LOCAL_PATH)/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
+    $(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \
+    $(LOCAL_PATH)/idc/Synaptics_RMI4_TouchPad_Sensor.idc:system/usr/idc/Synaptics_RMI4_TouchPad_Sensor.idc
+
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
+    $(LOCAL_PATH)/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -55,12 +72,12 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/samsung/ms013g/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # Default.prop overrides to get adb working at boot
-ifneq ($(TARGET_BUILD_VARIANT),user) 
+ifneq ($(TARGET_BUILD_VARIANT),user)
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0 \
