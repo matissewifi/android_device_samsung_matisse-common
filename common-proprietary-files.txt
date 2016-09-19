@@ -248,7 +248,7 @@ vendor/lib/libSHIMDivxDrm.so
 
 # Perf
 bin/mpdecision
-vendor/lib/libqc-opt.so
+vendor/lib/libqti-perfd-client.so
 
 # Radio
 lib/libatparser.so
