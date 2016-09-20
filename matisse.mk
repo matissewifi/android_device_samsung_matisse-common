@@ -84,5 +84,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mtp
 endif
 
+# OTA
+PRODUCT_PACKAGES += \
+    OpenDelta
+
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
