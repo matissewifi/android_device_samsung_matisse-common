@@ -5,3 +5,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=160
