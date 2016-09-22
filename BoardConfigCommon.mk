@@ -20,6 +20,10 @@ SUB_DEVICE_PATH := device/samsung/matisse-common
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(SUB_DEVICE_PATH)/bluetooth
 
+# Init
+TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/matisse-common/init/init_matisse.cpp
+TARGET_UNIFIED_DEVICE := true
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 BOARD_KERNEL_BASE := 0x00000000
