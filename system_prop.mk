@@ -10,16 +10,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-# Storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
-
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
-    ro.sf.lcd_density=161
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.sf.lcd_density=162
