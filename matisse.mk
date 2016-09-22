@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Proprietary files
+$(call inherit-product, vendor/samsung/matisse-common/matisse-common-vendor.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_CHARACTERISTICS := tablet
 
-# Proprietary files
-$(call inherit-product, vendor/samsung/matisse-common/matisse-common-vendor.mk)
+# System properties
+-include $(LOCAL_PATH)/system_prop.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -75,14 +78,6 @@ PRODUCT_COPY_FILES += \
     kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
-
-# Default.prop overrides to get adb working at boot
-ifneq ($(TARGET_BUILD_VARIANT),user)
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    persist.sys.usb.config=mtp
-endif
 
 # OTA
 PRODUCT_PACKAGES += \
