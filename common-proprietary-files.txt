@@ -256,6 +256,21 @@ lib/libcordon.so
 lib/libfactoryutil.so
 lib/libomission_avoidance.so
 
+# Qualcomm framework
+lib/libmdmdetect.so
+vendor/lib/libdiag.so
+vendor/lib/libdsutils.so
+vendor/lib/libidl.so
+vendor/lib/libnetmgr.so
+vendor/lib/libqcci_legacy.so
+vendor/lib/libqmi.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+vendor/lib/libqmiservices.so
+
 # Sensors
 lib/hw/sensors.msm8226.so
 
