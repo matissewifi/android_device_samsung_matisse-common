@@ -1,6 +1,6 @@
 build_root=$(pwd) # vendorsetup.sh is sourced by build/envsetup.sh in root of android build tree. Hope that nobody can correctly source it not from root of android tree.
 
-#. vendor/extra/tools/colors
+. build/colors
 
 read -n1 -r -p "Press p to start patching..." key
 
