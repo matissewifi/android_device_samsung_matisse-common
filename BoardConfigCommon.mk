@@ -35,6 +35,11 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_matisse
+TARGET_RECOVERY_DEVICE_MODULES := libinit_matisse
+TARGET_UNIFIED_DEVICE := true
+
 # Audio
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 USE_CUSTOM_AUDIO_POLICY := 1
