@@ -1,5 +1,6 @@
 /*
-   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+   Copyright (c) 2016, The Linux Foundation. All rights reserved.
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -12,6 +13,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -27,15 +29,15 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <fstream>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
-void vendor_load_properties()
+#include "init_msm8226.h"
+
+void init_target_properties()
 {
     std::string platform = property_get("ro.board.platform");
     if (platform != ANDROID_TARGET)
@@ -43,21 +45,21 @@ void vendor_load_properties()
 
     std::string bootloader = property_get("ro.bootloader");
 
-	if (bootloader == "T530") {
+    if (bootloader.find("T530") == 0) {
 		/* matissewifi */
         property_set("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOD8:user/release-keys");
         property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOD8 release-keys");
         property_set("ro.product.model", "SM-T530");
 		property_set("ro.product.name", "matissewifixx");
         property_set("ro.product.device", "matissewifi");
-	} else if (bootloader == "T531") {
+    } else if (bootloader.find("T531") == 0) {
 		/* matisse3g */
         property_set("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:5.0.2/LRX22G/T531XXU1BOD8:user/release-keys");
         property_set("ro.build.description", "matisse3gxx-user 5.0.2 LRX22G T531XXU1BOD8 release-keys");
         property_set("ro.product.model", "SM-T531");
         property_set("ro.product.name", "matisse3gxx");
         property_set("ro.product.device", "matisse3g");
-	} else if (bootloader == "T535") {
+    } else if (bootloader.find("T535") == 0) {
 		/* matisselte */
         property_set("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOD8:user/release-keys");
         property_set("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOD8 release-keys");
@@ -70,4 +72,7 @@ void vendor_load_properties()
         property_set("ro.product.name", "matissexx");
         property_set("ro.product.device", "matisse");
 	}
+
+    std::string device = property_get("ro.product.device");
+    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 }

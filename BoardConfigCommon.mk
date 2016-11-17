@@ -36,8 +36,8 @@ TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_matisse
-TARGET_RECOVERY_DEVICE_MODULES := libinit_matisse
+TARGET_INIT_VENDOR_LIB := libinit_msm8226
+TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/matisse-common/init/init_matisse.cpp
 TARGET_UNIFIED_DEVICE := true
 
 # Audio
