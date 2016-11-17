@@ -17,14 +17,14 @@ audio.offload.gapless.enabled=true
 audio.deep_buffer.media=true
 tunnel.audio.encode=true
 media.aac_51_output_enabled=true
-media.aaccodectype=1
+media.aaccodectype=true
 ro.qc.sdk.audio.fluencetype=none
 use.voice.path.for.pcm.voip=false
 
 # Bluetooth
 qcom.bluetooth.soc=smd
-qcom.bt.le_dev_pwr_class=1 \
-ro.bluetooth.hfp.ver=1.6
+qcom.bt.le_dev_pwr_class=1
+ro.bluetooth.hfp.ver=true.6
 ro.qualcomm.bt.hci_transport=smd
 
 # Camera
@@ -43,15 +43,15 @@ dalvik.vm.heapminfree=2m
 dalvik.vm.heapmaxfree=8m
 
 # Display
-ro.hdcp2.rx=tz \
-ro.qualcomm.cabl=1 \
-ro.secwvk=144 \
+ro.hdcp2.rx=tz
+ro.qualcomm.cabl=1
+ro.secwvk=144
 ro.sf.lcd_density=160
 
 # GPS
-persist.gps.qc_nlp_in_use=1
-ro.gps.agps_provider=1
-ro.qc.sdk.izat.premium_enabled=0
+persist.gps.qc_nlp_in_use=true
+ro.gps.agps_provider=true
+ro.qc.sdk.izat.premium_enabled=false
 ro.qc.sdk.izat.service_mask=0x0
 
 # IO Scheduler
@@ -65,11 +65,11 @@ media.stagefright.less-secure=true
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Radio
-persist.radio.no_wait_for_card=1
-keyguard.no_require_sim=1
+persist.radio.no_wait_for_card=true
+keyguard.no_require_sim=true
 
 # Subsystem
-persist.sys.ssr.enable_debug=0
+persist.sys.ssr.enable_debug=false
 
 # Strict Mode
 persist.sys.strictmode.disable=true
@@ -78,7 +78,7 @@ persist.sys.strictmode.disable=true
 ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.camera.facialproc=false
 ro.qc.sdk.sensors.gestures=true
-debug.sensors=1
+debug.sensors=true
 
 # Storage
 ro.sys.sdcardfs=false

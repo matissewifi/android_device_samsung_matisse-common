@@ -115,5 +115,8 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
 
+# Properties (reset them here, include more in device if needed)
+TARGET_SYSTEM_PROP := device/samsung/matisse-common/system.prop
+
 # inherit from the proprietary version
 -include vendor/samsung/matisse-common/BoardConfigVendor.mk
