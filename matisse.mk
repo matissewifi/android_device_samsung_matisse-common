@@ -14,21 +14,18 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/matisse-common/matisse-common-vendor.mk)
+LOCAL_PATH := device/samsung/matisse-common
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_CHARACTERISTICS := tablet
 
-# System properties
--include $(LOCAL_PATH)/system_prop.mk
+# Graphics
+PRODUCT_AAPT_CONFIG := xlarge
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := large
-PRODUCT_AAPT_PREF_CONFIG := mdpi
+# A list of dpis to select prebuilt apk, in precedence order.
+PRODUCT_AAPT_PREBUILT_DPI := hdpi mdpi
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
@@ -145,5 +142,16 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
+# Offmode charger
+PRODUCT_PACKAGES += \
+    charger_res_images cm_charger_res_images
+
+PRODUCT_PACKAGES += \
+	SamsungServiceMode
+
 # common msm8226
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
+
+
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/samsung/matisse-common/matisse-common-vendor.mk)
