@@ -1,0 +1,27 @@
+From 3ea13b0bd83d047b1d972bb00e1b5c4d5e68a1e7 Mon Sep 17 00:00:00 2001
+From: sub77 <sub77@ymail.com>
+Date: Thu, 24 Nov 2016 18:46:23 +0000
+Subject: [PATCH] Add Time to Release Build ID
+
+---
+ common.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/common.mk b/common.mk
+index 4afd3e0..8fec1fe 100644
+--- a/common.mk
++++ b/common.mk
+@@ -179,8 +179,8 @@ ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
+ endif
+ 
+ # Set all versions
+-COS_VERSION := Cosmic-OS_$(COS_BUILD)_$(ANDROID_VERSION)_$(shell date +%Y%m%d)_$(COS_VERSION_NUMBER)
+-COS_MOD_VERSION := Cosmic-OS_$(COS_BUILD)_$(ANDROID_VERSION)_$(shell date +%Y%m%d)_$(COS_VERSION_NUMBER)
++COS_VERSION := Cosmic-OS_$(COS_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d-%H%M)_$(COS_VERSION_NUMBER)
++COS_MOD_VERSION := Cosmic-OS_$(COS_BUILD)_$(ANDROID_VERSION)_$(shell date -u +%Y%m%d-%H%M)_$(COS_VERSION_NUMBER)
+ 
+ 
+ PRODUCT_PROPERTY_OVERRIDES += \
+-- 
+2.1.4
+
