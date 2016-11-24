@@ -110,10 +110,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
 
-# Widevine
-PRODUCT_PACKAGES += \
-    libshim_wvm
-
 # Wifi
 PRODUCT_COPY_FILES += \
     kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
