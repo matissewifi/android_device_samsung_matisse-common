@@ -60,10 +60,6 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
-# Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
 # Gello
 PRODUCT_PACKAGES += \
     Gello
