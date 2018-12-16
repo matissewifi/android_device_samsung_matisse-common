@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# inherit from common msm8226
+-include device/samsung/msm8226-common/msm8226.mk
+
 LOCAL_PATH := device/samsung/matisse-common
 
 # Overlays
@@ -110,48 +113,41 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Thermal
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf
-
 # Widevine
 PRODUCT_PACKAGES += \
     libshim_wvm
 
+# WCNSS
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+	$(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+	$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+
 # Wifi
-PRODUCT_COPY_FILES += \
-    kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    kernel/samsung/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
-
 PRODUCT_PACKAGES += \
-    libcurl \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwcnss_qmi \
-    wcnss_service
-
-PRODUCT_PACKAGES += \
-    hostapd.accept \
-    hostapd.deny \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf
+	hostapd \
+	libqsap_sdk \
+	libQWiFiSoftApCfg \
+	libwcnss_qmi \
+	libwpa_client \
+	wcnss_service \
+	wpa_supplicant \
+	wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-   $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+	$(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+	$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+	$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 # Offmode charger
 PRODUCT_PACKAGES += \
     charger_res_images cm_charger_res_images
-
-PRODUCT_PACKAGES += \
-	SamsungServiceMode
-
-# common msm8226
-$(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
-
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/matisse-common/matisse-common-vendor.mk)
