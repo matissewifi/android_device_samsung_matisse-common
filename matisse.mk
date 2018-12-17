@@ -49,13 +49,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    camera.msm8226 \
-    libstlport \
-    libxml2 \
-    Snap
-
 # Gello
 PRODUCT_PACKAGES += \
     Gello
