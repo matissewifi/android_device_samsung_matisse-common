@@ -22,9 +22,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 # Use Snapdragon LLVM if available on build server
 TARGET_USE_SDCLANG := true
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8226
-
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom vmalloc=400M user_debug=23 msm_rtb.filter=0x37
