@@ -3,12 +3,12 @@
         "remote": "github",
         "repository": "android_device_samsung_msm8226-common",
         "target_path": "device/samsung/msm8226-common",
-        "revision": "cm-14.0"
+        "revision": "cm-14.1"
     },
     {
         "remote": "github",
         "repository": "android_device_samsung_qcom-common",
         "target_path": "device/samsung/qcom-common",
-        "revision": "cm-14.0"
+        "revision": "cm-14.1"
     }
 ]
