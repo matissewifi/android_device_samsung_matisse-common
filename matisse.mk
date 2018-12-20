@@ -40,14 +40,14 @@ $(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_OUT_ETC)/system/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_OUT_ETC)/system/etc/permissions/tablet_core_hardware.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_OUT_ETC)/system/etc/mixer_paths.xml
 
 # Gello
 PRODUCT_PACKAGES += \
@@ -89,15 +89,26 @@ PRODUCT_PACKAGES += \
 
 # WCNSS
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-	$(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-	$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+	$(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_OUT_ETC)/system/etc/wifi/WCNSS_qcom_cfg.ini \
+	$(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_OUT_ETC)/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+	$(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_OUT_ETC)/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_COPY_FILES += \
-$(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
-
+$(LOCAL_PATH)/wifi/hostapd_default.conf:$(TARGET_OUT_ETC)/system/etc/hostapd/hostapd_default.conf \
+$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_OUT_ETC)/system/etc/wifi/p2p_supplicant_overlay.conf \
+$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_OUT_ETC)/system/etc/wifi/wpa_supplicant_overlay.conf \
+$(LOCAL_PATH)/wifi/wpa_supplicant_ath6kl.conf:$(TARGET_OUT_ETC)/system/etc/wifi/wpa_supplicant_ath6kl.conf \
+$(LOCAL_PATH)/wifi/nvram_net.txt_a0:$(TARGET_OUT_ETC)/system/etc/wifi/nvram_net.txt_a0 \
+$(LOCAL_PATH)/wifi/nvram_net.txt:$(TARGET_OUT_ETC)/system/etc/wifi/nvram_net.txt \
+$(LOCAL_PATH)/wifi/nvram_mfg.txt_a0:$(TARGET_OUT_ETC)/system/etc/wifi/nvram_mfg.txt_a0 \
+$(LOCAL_PATH)/wifi/cred.conf:$(TARGET_OUT_ETC)/system/etc/wifi/cred.conf \
+$(LOCAL_PATH)/wifi/bcmdhd_sta.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_sta.bin \
+$(LOCAL_PATH)/wifi/bcmdhd_mfg.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_mfg.bin \
+$(LOCAL_PATH)/wifi/bcmdhd_apsta.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_apsta.bin \
+$(LOCAL_PATH)/wifi/bcmdhd_ibss.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_ibss.bin \
+$(LOCAL_PATH)/wifi/hostapd.accept:$(TARGET_OUT_ETC)/system/etc/hotpad/hostapd.accept \
+$(LOCAL_PATH)/wifi/hostapd.deny:$(TARGET_OUT_ETC)/system/etc/hotpad/hostapd.deny \
+$(LOCAL_PATH)/wifi/hostapd_default.conf:$(TARGET_OUT_ETC)/system/etc/hotpad/hostapd_default.conf 
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -106,14 +117,27 @@ PRODUCT_PACKAGES += \
 	libQWiFiSoftApCfg \
 	libwcnss_qmi \
 	libwpa_client \
+	bcmdhd \
 	wcnss_service \
 	wpa_supplicant \
 	wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-	$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-	$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+	$(LOCAL_PATH)/wifi/hostapd_default.conf:$(TARGET_OUT_ETC)/system/etc/hostapd/hostapd_default.conf \
+	$(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_OUT_ETC)/system/etc/wifi/p2p_supplicant_overlay.conf \
+	$(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_OUT_ETC)/system/etc/wifi/wpa_supplicant_overlay.conf \
+	$(LOCAL_PATH)/wifi/wpa_supplicant_ath6kl.conf:$(TARGET_OUT_ETC)/system/etc/wifi/wpa_supplicant_ath6kl.conf \
+	$(LOCAL_PATH)/wifi/nvram_net.txt_a0:$(TARGET_OUT_ETC)/system/etc/wifi/nvram_net.txt_a0 \
+	$(LOCAL_PATH)/wifi/nvram_net.txt:$(TARGET_OUT_ETC)/system/etc/wifi/nvram_net.txt \
+	$(LOCAL_PATH)/wifi/nvram_mfg.txt_a0:$(TARGET_OUT_ETC)/system/etc/wifi/nvram_mfg.txt_a0 \
+	$(LOCAL_PATH)/wifi/cred.conf:$(TARGET_OUT_ETC)/system/etc/wifi/cred.conf \
+	$(LOCAL_PATH)/wifi/bcmdhd_sta.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_sta.bin \
+	$(LOCAL_PATH)/wifi/bcmdhd_mfg.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_mfg.bin \
+	$(LOCAL_PATH)/wifi/bcmdhd_apsta.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_apsta.bin \
+	$(LOCAL_PATH)/wifi/bcmdhd_ibss.bin:$(TARGET_OUT_ETC)/system/etc/wifi/bcmdhd_ibss.bin \
+	$(LOCAL_PATH)/wifi/hostapd.accept:$(TARGET_OUT_ETC)/system/etc/hotpad/hostapd.accept \
+	$(LOCAL_PATH)/wifi/hostapd.deny:$(TARGET_OUT_ETC)/system/etc/hotpad/hostapd.deny \
+	$(LOCAL_PATH)/wifi/hostapd_default.conf:$(TARGET_OUT_ETC)/system/etc/hotpad/hostapd_default.conf 
 
 # Offmode charger
 PRODUCT_PACKAGES += \
