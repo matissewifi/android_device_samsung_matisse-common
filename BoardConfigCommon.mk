@@ -86,5 +86,4 @@ BOARD_SEPOLICY_DIRS += \
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Properties (reset them here, include more in device if needed)
-TARGET_SYSTEM_PROP := device/samsung/matisse-common/system.prop
 -include $(LOCAL_PATH)/system_prop.mk
