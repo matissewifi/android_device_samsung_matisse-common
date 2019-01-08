@@ -37,6 +37,10 @@ on boot
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
+    
+    # Graphic idle Permission for sys nodes
+    chown system graphics /sys/devices/virtual/graphics/fb0/idle_time
+    chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
 
     # NFC_NXP
     setprop ro.nfc.port "I2C"
