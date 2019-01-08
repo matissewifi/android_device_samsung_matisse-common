@@ -1,3 +1,10 @@
 allow platform_app fuseblk:dir { open read remove_name search write };
 allow platform_app fuseblk:file { getattr unlink write };
-
+allow platform_app userinit_prop:file { read };
+allow platform_app adbsecure_prop:file { read };
+allow platform_app recovery_prop:file { read };
+allow platform_app adbtcp_prop:file { read };
+#allow platform_app boot_mod_prop:file { read };
+allow platform_app sys_usb_tethering_prop:file { read };
+allow platform_app userinit_prop:file { read };
+allow platform_app adbsecure_prop:file { read };

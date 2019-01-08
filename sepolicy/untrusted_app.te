@@ -1,3 +1,12 @@
-# These are safe for an untrusted_app -- they are the external SD card
-allow untrusted_app fuseblk:dir search;
-allow untrusted_app fuseblk:file { getattr read };
+allow untrusted_app sys_usb_controller_prop:file { read };
+allow untrusted_app mpdecision_prop:file { read };
+allow untrusted_app spcomlib_prop:file { read };
+allow untrusted_app safemode_prop:file { read };
+allow untrusted_app userinit_prop:file { read };
+allow untrusted_app adbsecure_prop:file { read };
+allow untrusted_app recovery_prop:file { read };
+allow untrusted_app adbtcp_prop:file { read };
+allow untrusted_app boot_mode_prop:file { read };
+allow untrusted_app sys_usb_tethering_prop:file { read };
+allow untrusted_app sys_usb_configfs_prop:file { read };
+allow untrusted_app sysfs:file { getattr read open };

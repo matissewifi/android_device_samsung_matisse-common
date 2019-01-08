@@ -1,3 +1,9 @@
 allow priv_app device:dir { open read };
 allow priv_app fuseblk:dir { add_name open read search read write };
 allow priv_app fuseblk:file { create getattr open read write };
+allow priv_app userinit_prop:file { read };
+allow priv_app adbsecure_prop:file { read };
+allow priv_app recovery_prop:file { read };
+allow priv_app adbtcp_prop:file { read };
+allow priv_app boot_mode_prop:file { read };
+allow priv_app sys_usb_tethering_prop:file { read };
