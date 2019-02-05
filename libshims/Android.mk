@@ -17,8 +17,8 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := libmmcamera_sr352_shim.cpp
-LOCAL_MODULE := libmmcamera_sr352_shim
+LOCAL_SRC_FILES := libmmcamera_sr130pc20.cpp
+LOCAL_MODULE := libmmcamera_sr130pc20
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
