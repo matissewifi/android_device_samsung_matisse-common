@@ -40,7 +40,7 @@ $(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048
 
 # Camera
 PRODUCT_PACKAGES += \
-    libmmcamera_sr130pc20
+    libmmcamera_sr130pc20_shim
 
 # Permissions
 PRODUCT_COPY_FILES += \
