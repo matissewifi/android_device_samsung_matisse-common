@@ -37,6 +37,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sec
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/samsung/matisse-common/libhealthd/images
 TARGET_UNIFIED_DEVICE := true
 
 # Display
