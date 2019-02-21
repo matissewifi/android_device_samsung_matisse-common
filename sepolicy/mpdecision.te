@@ -1,1 +1,2 @@
 allow mpdecision socket_device:dir write;
+allow mpdecision self:capability sys_ptrace;
