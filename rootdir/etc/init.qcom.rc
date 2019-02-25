@@ -781,6 +781,7 @@ on boot
     chown nfc nfc /data/nfc/param
 
     # Permissions for Charging
+	mkdir /efs/Battery 0775 radio system
     chown system radio /sys/class/power_supply/battery/batt_reset_soc
     chown system radio /sys/class/power_supply/battery/update
     chown system radio /sys/class/power_supply/battery/factory_mode
@@ -886,6 +887,12 @@ on boot
     chmod 0640 /efs/gyro_cal_data
     restorecon /efs/gyro_cal_data
 
+# Healthd can trigger a full boot from charger mode by signaling this
+# property when the power button is held.
+on property:sys.boot_from_charger_mode=1
+    class_stop charger
+    trigger late-init
+
 # Services begin here
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
@@ -904,6 +911,16 @@ service adsprpcd /system/bin/adsprpcd
     class main
     user media
     group media
+
+service healthd-charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
+
+service healthd /sbin/healthd
+    class core
+    critical
+    seclabel u:r:healthd:s0
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class main
