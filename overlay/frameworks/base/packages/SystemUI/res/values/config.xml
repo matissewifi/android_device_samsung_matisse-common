@@ -27,4 +27,8 @@
 
     <!-- Whether rotation lock shows up in quick settings or not -->
     <bool name="quick_settings_show_rotation_lock">true</bool>
+	
+	<!-- The number of columns in the QuickSettings -->
+    <integer name="quick_settings_num_columns">5</integer>
+
 </resources>
