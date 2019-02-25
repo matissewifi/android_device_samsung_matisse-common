@@ -19,7 +19,6 @@
 <resources>
     <bool name="def_accelerometer_rotation">true</bool>
     <bool name="def_wifi_on">true</bool>
-	<bool name="def_accelerometer_rotation">true</bool>
 	<bool name="def_screen_brightness_automatic_mode">false</bool>
 	<!-- Default screen brightness Change To 255 is 100%. -->
 	<integer name="def_screen_brightness">255</integer>
@@ -28,8 +27,8 @@
 	<bool name="config_show_password_on">false</bool>
 	<bool name="def_custom_sys_volume">true</bool>
 	<!-- Default for Settings.Secure.WAKE_GESTURE_ENABLED -->
-	<bool name="def_wake_gesture_enabled">true</bool>
+	<bool name="def_wake_gesture_enabled">false</bool>
 	<!-- Default state of tap to wake -->
-	<bool name="def_double_tap_to_wake">true</bool>
+	<bool name="def_double_tap_to_wake">false</bool>
 </resources>
 
