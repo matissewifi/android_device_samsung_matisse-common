@@ -1,0 +1,3 @@
+allow servicemanager zygote:dir search;
+allow servicemanager zygote:file { open read };
+allow servicemanager zygote:process getattr;

@@ -2,3 +2,5 @@ allow untrusted_app fuse:lnk_file read;
 allow untrusted_app sysfs:file { getattr open read };
 allow untrusted_app proc_iomem:file getattr;
 allow untrusted_app proc_sysrq:file getattr;
+allow untrusted_app zygote:binder call;
+allow untrusted_app zygote:binder transfer;
