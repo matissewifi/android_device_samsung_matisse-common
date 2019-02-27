@@ -17,14 +17,10 @@
 -->
 <resources>
 	<dimen name="match_parent">1px</dimen>
-    <dimen name="standard_notification_panel_width">816dp</dimen>
+    <dimen name="standard_notification_panel_width">616dp</dimen>
     <dimen name="notification_panel_width">@dimen/match_parent</dimen>
 	<dimen name="volume_dialog_panel_width">616dp</dimen>
-	<dimen name="qs_quick_tile_size">48dp</dimen>
-	<dimen name="qs_tile_icon_size">30dp</dimen>
-	<dimen name="qs_tile_text_size">18sp</dimen>
-	<dimen name="qs_tile_height">98dp</dimen>
-	
+
 	<!-- Largest size an avatar might need to be drawn in the user picker, status bar, or
          quick settings header -->
 	<dimen name="max_avatar_size">68dp</dimen>
@@ -37,7 +33,12 @@
 
     <!-- The font size of the time when expanded in QS -->
     <dimen name="qs_time_expanded_size">18sp</dimen>
+	    <!-- Vertical spacing between multiple volume slider rows -->
+    <dimen name="volume_slider_interspacing">10dp</dimen>
+
+    <!-- Standard image button size for volume dialog buttons -->
+    <dimen name="volume_button_size">68dp</dimen>
 	
-	<dimen name="volume_row_height">68dp</dimen>
+	<dimen name="volume_row_height">84dp</dimen>
 	<dimen name="volume_row_slider_height">68dp</dimen>
 </resources>

@@ -17,4 +17,14 @@
 <resources>
     <!-- Restart preview for back camera onPictureTaken -->
     <bool name="back_camera_restart_preview_onPictureTaken">true</bool>
+	
+	<!-- Restart preview for front camera onPictureTaken -->
+    <bool name="front_camera_restart_preview_onPictureTaken">true</bool>
+	
+	<bool name="enable_warped_pano_preview">true</bool>
+	
+	<string name="screen_orientation">landscape</string>
+	
+	<integer name="max_priority">100000</integer>
+	<integer name="min_priority">0</integer>
 </resources>
