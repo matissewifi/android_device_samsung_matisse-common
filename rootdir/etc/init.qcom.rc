@@ -218,7 +218,7 @@ on early-boot
     # Allow subsystem (modem etc) debugging
     write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
 	
-	# Graphics
+	# Graphics fb0
     chown system graphics /sys/class/graphics/fb0/idle_time
     chown system graphics /sys/class/graphics/fb0/dyn_pu
     chown system graphics /sys/class/graphics/fb0/dynamic_fps
@@ -231,8 +231,29 @@ on early-boot
     chmod 0664 /sys/class/graphics/fb0/modes
     chmod 0664 /sys/class/graphics/fb0/mode
     chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+	
+	# Graphics fb1
+	chown system graphics /sys/class/graphics/fb1/idle_time
+    chown system graphics /sys/class/graphics/fb1/dyn_pu
+    chown system graphics /sys/class/graphics/fb1/dynamic_fps
+    chown system graphics /sys/class/graphics/fb1/modes
+    chown system graphics /sys/class/graphics/fb1/mode
+    chown system graphics /sys/class/graphics/fb1/msm_cmd_autorefresh_en
+    chmod 0664 /sys/class/graphics/fb1/idle_time
+    chmod 0664 /sys/class/graphics/fb1/dyn_pu
+    chmod 0664 /sys/class/graphics/fb1/dynamic_fps
+    chmod 0664 /sys/class/graphics/fb1/modes
+    chmod 0664 /sys/class/graphics/fb1/mode
+    chmod 0664 /sys/class/graphics/fb1/msm_cmd_autorefresh_en
 
 on boot
+
+	# create symlink for fb0 as HDMI
+    symlink /dev/graphics/fb0 /dev/graphics/hdmi
+	
+	# create symlink for fb1 as HDMI
+	symlink /dev/graphics/fb1 /dev/graphics/hdmi
+	
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
     # Permissions for bluetooth
