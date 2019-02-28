@@ -14,6 +14,8 @@
 
 #include "init_sec.h"
 
+#include "init_msm8226.h"
+
 #ifndef BACKLIGHT_PATH
 #define BACKLIGHT_PATH          "/sys/class/leds/lcd-backlight/brightness"
 #endif
@@ -40,7 +42,7 @@ device_variant check_device_and_get_variant()
     return match(bootloader);
 }
 
-void vendor_load_properties()
+void init_target_properties()
 {
     device_variant variant = check_device_and_get_variant();
 
@@ -51,6 +53,8 @@ void vendor_load_properties()
             property_set("ro.build.description", "matissewifiue-user 5.0.2 LRX22G T530NUU1BOJ4 release-keys");
             property_set("ro.product.model", "SM-T530NU");
             property_set("ro.product.device", "matissewifi");
+			property_set("ro.radio.noril", "1");
+      		property_set("ro.carrier", "wifi-only");
             break;
         case T530XX:
             /* matissewifixx */
@@ -58,6 +62,8 @@ void vendor_load_properties()
             property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOJ4 release-keys");
             property_set("ro.product.model", "SM-T530");
             property_set("ro.product.device", "matissewifi");
+			property_set("ro.radio.noril", "1");
+      		property_set("ro.carrier", "wifi-only");
             break;
         case T531XX:
             /* matisse3gxx */
@@ -65,6 +71,9 @@ void vendor_load_properties()
             property_set("ro.build.description", "matisse3gxx-user 5.0.2 LRX22G T531XXU1BOE6 release-keys");
             property_set("ro.product.model", "SM-T531");
             property_set("ro.product.device", "matisse3g");
+			property_set("telephony.lteOnGsmDevice", "0");
+      		property_set("ro.telephony.default_network", "0");
+      		property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
             break;
         case T535XX:
             /* matisseltexx */
@@ -72,6 +81,9 @@ void vendor_load_properties()
             property_set("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOL1 release-keys");
             property_set("ro.product.model", "SM-T535");
             property_set("ro.product.device", "matisselte");
+			property_set("telephony.lteOnGsmDevice", "0");
+      		property_set("ro.telephony.default_network", "0");
+      		property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
             break;
         default: /* T530 */
             /* matissewifi */
@@ -79,6 +91,8 @@ void vendor_load_properties()
             property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1ANAI release-keys");
             property_set("ro.product.model", "SM-T530");
             property_set("ro.product.device", "matissewifi");
+			property_set("ro.radio.noril", "1");
+      		property_set("ro.carrier", "wifi-only");
             break;
     }
 
