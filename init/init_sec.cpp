@@ -14,8 +14,6 @@
 
 #include "init_sec.h"
 
-#include "init_msm8226.h"
-
 #ifndef BACKLIGHT_PATH
 #define BACKLIGHT_PATH          "/sys/class/leds/lcd-backlight/brightness"
 #endif
@@ -42,7 +40,7 @@ device_variant check_device_and_get_variant()
     return match(bootloader);
 }
 
-void init_target_properties()
+void vendor_load_properties()
 {
     device_variant variant = check_device_and_get_variant();
 
