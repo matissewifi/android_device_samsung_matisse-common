@@ -38,7 +38,6 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sec
-BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/libhealthd/images
 TARGET_UNIFIED_DEVICE := true
 
 # Display
@@ -82,6 +81,3 @@ BOARD_SEPOLICY_DIRS += \
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
-
-# Properties (reset them here, include more in device if needed)
--include $(LOCAL_PATH)/system_prop.mk
