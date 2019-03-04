@@ -834,7 +834,3 @@ service dhcpcd_bnep3 /system/bin/dhcpcd -BKLG
 service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
-
-# Disable ril services if noril prop is set
-on property:ro.carrier=wifi-only
-    stop ril-daemon
