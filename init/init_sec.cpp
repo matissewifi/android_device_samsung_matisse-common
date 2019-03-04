@@ -1,17 +1,5 @@
-#include "minui/minui.h"
-#include <cutils/klog.h>
-#include <fcntl.h>
-#include "healthd.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "log.h"
-#include "property_service.h"
-#include "util.h"
-#include "vendor_init.h"
-
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
 #include "init_sec.h"
 
 #ifndef BACKLIGHT_PATH
@@ -23,10 +11,6 @@
 #define LOGW(x...) do { KLOG_WARNING("charger", x); } while (0)
 #define LOGV(x...) do { KLOG_DEBUG("charger", x); } while (0)
 
-std::string bootloader;
-std::string device;
-char* devicename;
-
 static const GRFont* gr_font = NULL;
 
 static const GRFont* get_font()
@@ -34,49 +18,44 @@ static const GRFont* get_font()
     return gr_font;
 }
 
-device_variant check_device_and_get_variant()
+void init_target_properties(void)
 {
-    bootloader = property_get("ro.bootloader");
-    return match(bootloader);
-}
+		
+    	std::string bootloader = property_get("ro.bootloader");
 
-void vendor_load_properties()
-{
-    device_variant variant = check_device_and_get_variant();
-
-    switch (variant) {
-        case T530NU:
+    	if (bootloader.find("T530NU") == 0) {
             /* matissewifiue */
             property_set("ro.build.fingerprint", "samsung/matissewifiue/matissewifi:5.0.2/LRX22G/T530NUU1BOJ4:user/release-keys");
-            property_set("ro.build.description", "matissewifiue-user 5.0.2 LRX22G T530NUU1BOJ4 release-keys");
-            property_set("ro.product.model", "SM-T530NU");
-			property_set("ro.product.name", "matissewifi");
+            property_set("ro.build.description", "matissewifiue-user 5.0.2 LRX22G T530NUU1BOJ4 release-keys");            
+			property_set("ro.product.product", "matissewifi");
             property_set("ro.product.device", "matissewifi");
-	    	property_set("ro.radio.noril", "1");
+			property_set("ro.product.model", "SM-T530NU");
       	    property_set("ro.carrier", "wifi-only");
-            break;
-        case T530XX:
+		    property_set("ro.radio.noril", "1");
+		}
+		else if (bootloader.find("T530XX") == 0) {
             /* matissewifixx */
-            property_set("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOJ4:user/release-keys");
+			return;
+            /*property_set("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOJ4:user/release-keys");
             property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOJ4 release-keys");
             property_set("ro.product.model", "SM-T530");
-			property_set("ro.product.name", "matissewifi");
+		    property_set("ro.product.name", "matissewifi");
             property_set("ro.product.device", "matissewifi");
-	    	property_set("ro.radio.noril", "1");
-      	    property_set("ro.carrier", "wifi-only");
-            break;
-        case T531XX:
+	      	property_set("ro.carrier", "wifi-only");
+            property_set("ro.radio.noril", "1");*/
+		}
+		else if (bootloader.find("T531XX") == 0) {
             /* matisse3gxx */
             property_set("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:5.0.2/LRX22G/T531XXU1BOE6:user/release-keys");
             property_set("ro.build.description", "matisse3gxx-user 5.0.2 LRX22G T531XXU1BOE6 release-keys");
             property_set("ro.product.model", "SM-T531");
 			property_set("ro.product.name", "matisse3g");
             property_set("ro.product.device", "matisse3g");
-	    	property_set("telephony.lteOnGsmDevice", "0");
-      	    property_set("ro.telephony.default_network", "0");
+	    	property_set("telephony.lteOnCdmaDevice", "0");
+			property_set("telephony.lteOnGsmDevice", "0");
       	    property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
-            break;
-        case T535XX:
+		}
+		else if (bootloader.find("T535XX") == 0) {
             /* matisseltexx */
             property_set("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOL1:user/release-keys");
             property_set("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOL1 release-keys");
@@ -84,20 +63,20 @@ void vendor_load_properties()
 			property_set("ro.product.name", "matisselte");
             property_set("ro.product.device", "matisselte");
 	    	property_set("telephony.lteOnGsmDevice", "1");
-      	    property_set("ro.telephony.default_network", "1");
+      	    property_set("ro.telephony.default_network", "10");
       	    property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
-            break;
-        default: /* T5XX */
+		}
+		else {
             /* matissewifi */
-            property_set("ro.product.model", "SM-T5XX");
+			return;
+            /*property_set("ro.product.model", "SM-T5XX");
             property_set("ro.product.name", "matissexx");
 			property_set("ro.product.device", "matisse");
-	    	property_set("ro.radio.noril", "1");
-      	    property_set("ro.carrier", "wifi-only");
-            break;
-    }
+		    property_set("ro.carrier", "wifi-only");
+	    	property_set("ro.radio.noril", "1");*/
+        }
 
-    device = property_get("ro.product.device");
+    std::string device = property_get("ro.product.device");
     INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 }
 
@@ -177,4 +156,10 @@ void healthd_board_mode_charger_init()
         LOGW("Couldn't open font, falling back to default!\n");
         gr_font = gr_sys_font();
     }
+}
+
+void vendor_load_properties(void)
+{
+	/* set the device properties */
+	init_target_properties();
 }

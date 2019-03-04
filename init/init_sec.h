@@ -1,3 +1,18 @@
+#include "minui/minui.h"
+#include <cutils/klog.h>
+#include <fcntl.h>
+#include "healthd.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "log.h"
+#include "util.h"
+#include "vendor_init.h"
+#include "property_service.h"
+
+void init_target_properties();
 enum device_variant {
     T530,
     T530NU,
