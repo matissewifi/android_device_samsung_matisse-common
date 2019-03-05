@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Widevine
 PRODUCT_PACKAGES += \
-    libshim_wvm
+    libwvm_shim
 
 # WCNSS
 PRODUCT_COPY_FILES += \
