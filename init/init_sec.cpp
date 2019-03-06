@@ -1,6 +1,16 @@
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
-#include "init_sec.h"
+#include "minui/minui.h"
+#include <cutils/klog.h>
+#include <fcntl.h>
+#include "healthd.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "log.h"
+#include "property_service.h"
+#include "util.h"
+#include "vendor_init.h"
 
 #ifndef BACKLIGHT_PATH
 #define BACKLIGHT_PATH          "/sys/class/leds/lcd-backlight/brightness"
@@ -10,6 +20,10 @@
 #define LOGE(x...) do { KLOG_ERROR("charger", x); } while (0)
 #define LOGW(x...) do { KLOG_WARNING("charger", x); } while (0)
 #define LOGV(x...) do { KLOG_DEBUG("charger", x); } while (0)
+
+std::string bootloader;
+std::string device;
+char* devicename;
 
 static const GRFont* gr_font = NULL;
 
@@ -157,6 +171,6 @@ void healthd_board_mode_charger_init()
 
 void vendor_load_properties(void)
 {
-	/* set the device properties */
+	 set the device properties 
 	init_target_properties();
 }
