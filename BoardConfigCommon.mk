@@ -36,8 +36,8 @@ TARGET_KERNEL_SELINUX_LOG_CONFIG := selinux_log_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_sec
-TARGET_RECOVERY_DEVICE_MODULES := libinit_sec
+TARGET_INIT_VENDOR_LIB := libinit_matisse
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_matisse
 TARGET_UNIFIED_DEVICE := true
 
 # Display
