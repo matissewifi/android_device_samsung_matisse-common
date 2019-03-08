@@ -85,6 +85,7 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">65</integer>
 
+
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
       it causes the device to wake up.
       The default is false. -->
@@ -103,4 +104,6 @@
 
     <!-- enabling WifiDisplay(Miracast Source)-->
     <bool name="config_enableWifiDisplay">true</bool>
+	<integer name="config_buttonBrightnessSettingDefault">0</integer>
+	<bool name="config_deviceHasVariableButtonBrightness">true</bool>
 </resources>
