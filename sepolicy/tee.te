@@ -2,4 +2,4 @@ allow tee vcs_data_file:dir create_dir_perms;
 allow tee vcs_data_file:file create_file_perms;
 allow tee efs_file:file { getattr read open };
 allow tee qseecomd_prop:property_service set;
-
+allow tee vfat:file { getattr open read };
