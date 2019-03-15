@@ -63,8 +63,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Power HAL
-TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
-TARGET_POWERHAL_VARIANT := qcom
+#TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
+#TARGET_POWERHAL_VARIANT := qcom
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/matisse-common/recovery/recovery_keys.c
