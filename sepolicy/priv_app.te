@@ -10,3 +10,4 @@ allow priv_app sys_usb_tethering_prop:file { read };
 allow priv_app vr_manager_service:service_manager find;
 allow priv_app zygote:binder { call transfer };
 neverallow priv_app su_exec:file execute;
+allow priv_app cache_private_backup_file:dir getattr;
