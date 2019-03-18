@@ -110,8 +110,7 @@ PRODUCT_PACKAGES += \
     libwcnss_qmi \
     libwpa_client \
     wcnss_service \
-    wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
