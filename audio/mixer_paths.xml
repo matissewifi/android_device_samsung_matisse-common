@@ -16,24 +16,14 @@
 	<ctl name="SLIM RX3 MUX" value="ZERO" />
 	<ctl name="SLIM RX4 MUX" value="ZERO" />
 	<ctl name="SLIM RX5 MUX" value="ZERO" />
-	<ctl name="SLIM RX6 MUX" value="ZERO" />
-	<ctl name="SLIM RX7 MUX" value="ZERO" />
 
 	<ctl name="RX2 MIX2 INP2" value="ZERO" />
 	<ctl name="RX2 MIX2 INP1" value="ZERO" />
 	<ctl name="RX1 MIX2 INP2" value="ZERO" />
 	<ctl name="RX1 MIX2 INP1" value="ZERO" />
-	<ctl name="RX7 MIX1 INP2" value="ZERO" />
-	<ctl name="RX7 MIX1 INP1" value="ZERO" />
-	<ctl name="RX6 MIX1 INP2" value="ZERO" />
-	<ctl name="RX6 MIX1 INP1" value="ZERO" />
-	<ctl name="RX5 MIX1 INP2" value="ZERO" />
-	<ctl name="RX5 MIX1 INP1" value="ZERO" />
 	<ctl name="RX4 MIX1 INP2" value="ZERO" />
 	<ctl name="RX4 MIX1 INP1" value="ZERO" />
-	<ctl name="RX3 MIX1 INP2" value="ZERO" />
 	<ctl name="RX3 MIX1 INP1" value="ZERO" />
-	<ctl name="RX2 MIX1 INP2" value="ZERO" />
 	<ctl name="RX2 MIX1 INP1" value="ZERO" />
 	<ctl name="RX1 MIX1 INP3" value="ZERO" />
 	<ctl name="RX1 MIX1 INP2" value="ZERO" />
@@ -56,33 +46,17 @@
 	<ctl name="MultiMedia1 Mixer SLIM_4_TX" value="0" />
 	<ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
 
-	<ctl name="SLIM TX10 MUX" value="ZERO" />
-	<ctl name="SLIM TX9 MUX" value="ZERO" />
-	<ctl name="SLIM TX8 MUX" value="ZERO" />
-	<ctl name="SLIM TX7 MUX" value="ZERO" />
-	<ctl name="SLIM TX6 MUX" value="ZERO" />
 	<ctl name="SLIM TX5 MUX" value="ZERO" />
 	<ctl name="SLIM TX4 MUX" value="ZERO" />
 	<ctl name="SLIM TX3 MUX" value="ZERO" />
 	<ctl name="SLIM TX2 MUX" value="ZERO" />
-	<ctl name="SLIM TX1 MUX" value="ZERO" />
 
-	<ctl name="DEC10 MUX" value="ZERO" />
-	<ctl name="DEC9 MUX" value="ZERO" />
-	<ctl name="DEC8 MUX" value="ZERO" />
-	<ctl name="DEC7 MUX" value="ZERO" />
-	<ctl name="DEC6 MUX" value="ZERO" />
-	<ctl name="DEC5 MUX" value="ZERO" />
 	<ctl name="DEC4 MUX" value="ZERO" />
 	<ctl name="DEC3 MUX" value="ZERO" />
 	<ctl name="DEC2 MUX" value="ZERO" />
 	<ctl name="DEC1 MUX" value="ZERO" />
 	<!-- end of initial mixer settings -->
   	
-	<!-- echo reference -->
-  	<ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
-	<!-- end of echo reference -->
-
 	<!-- ================================================================ -->
 	<!-- Verb -->
 	<!-- RX part -->
@@ -105,19 +79,15 @@
 	</path>
 
 	<path name="echo-reference">
-        	<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
     	</path>
    
 	<path name="quat-mi2s-internal-echo-reference">
-		<ctl name="AUDIO_REF_EC_UL1 MUX" value="QUAT_MI2S_RX" />
    	</path>
    	
 	<path name="echo-reference headphones">
-      		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_5_RX" />
 	</path>
 	
 	<path name="bt-sco-echo-reference">
-        	<ctl name="AUDIO_REF_EC_UL1 MUX" value="SEC_AUX_PCM_RX" />
 	</path>
 	
 	<!-- low latency -->
@@ -272,31 +242,19 @@
 
 	<!-- TX part -->
 	<path name="main-mic">
-		<ctl name="AIF1_CAP Mixer SLIM TX1" value="1" />
-		<ctl name="SLIM_0_TX Channels" value="One" />
-		<ctl name="SLIM TX1 MUX" value="DEC1" />
-		<ctl name="DEC1 MUX" value="ADC1" />
+		
 	</path>
 
 	<path name="sub-mic">
-		<ctl name="AIF1_CAP Mixer SLIM TX1" value="1" />
-		<ctl name="SLIM_0_TX Channels" value="One" />
-		<ctl name="SLIM TX1 MUX" value="DEC1" />
-		<ctl name="DEC1 MUX" value="ADC3" />
+		
 	</path>
 
 	<path name="3rd-mic">
-		<ctl name="AIF1_CAP Mixer SLIM TX1" value="1" />
-		<ctl name="SLIM_0_TX Channels" value="One" />
-		<ctl name="SLIM TX1 MUX" value="DEC1" />
-		<ctl name="DEC1 MUX" value="ADC4" />
+		
 	</path>
 
 	<path name="ear-mic">
-		<ctl name="AIF1_CAP Mixer SLIM TX1" value="1" />
-		<ctl name="SLIM_0_TX Channels" value="One" />
-		<ctl name="SLIM TX1 MUX" value="DEC1" />
-		<ctl name="DEC1 MUX" value="ADC2" />
+		
 	</path>
 	<!-- end of Device -->
 
@@ -375,7 +333,6 @@
 	<!-- ================================================================ -->
 	<!-- Recording Scenario	-->
 	<path name="rec-main-mic">
-		<ctl name="Main Mic Delay" value="4" />
 		<path name="main-mic" />
 		<ctl name="ADC1 Volume" value="23" />
 		<ctl name="DEC1 Volume" value="84" />
@@ -394,10 +351,9 @@
 	</path>
 
 	<path name="rec-stereo-mic">
-		<ctl name="Main Mic Delay" value="4" />
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC1 Volume" value="100" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="19" />
@@ -422,10 +378,9 @@
 	</path>
 
 	<path name="rec-high-gain-stereo-mic">
-		<ctl name="Main Mic Delay" value="4" />
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC1 Volume" value="100" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="19" />
@@ -479,7 +434,7 @@
 	<path name="bargein1-NS-mic">
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC4 Volume" value="12" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="12" />
@@ -513,7 +468,7 @@
 	<path name="bargein2-NS-mic">
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC4 Volume" value="12" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="12" />
@@ -599,7 +554,7 @@
 	<path name="voice-call-NS-mic-handset">
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC1 Volume" value="19" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="19" />
@@ -609,7 +564,7 @@
 	<path name="voice-call-NS-mic-speaker">
 		<path name="sub-mic" />
 		<path name="3rd-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC4 Volume" value="16" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="16" />
@@ -704,7 +659,7 @@
 	<path name="video-call-NS-mic-handset">
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC1 Volume" value="19" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="19" />
@@ -714,7 +669,7 @@
 	<path name="video-call-NS-mic-speaker">
 		<path name="sub-mic" />
 		<path name="3rd-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC4 Volume" value="16" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="16" />
@@ -787,7 +742,7 @@
 	<path name="VoLTE-voice-NS-mic-handset">
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC1 Volume" value="19" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="19" />
@@ -797,7 +752,7 @@
 	<path name="VoLTE-voice-NS-mic-speaker">
 		<path name="sub-mic" />
 		<path name="3rd-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC4 Volume" value="16" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="16" />
@@ -870,7 +825,7 @@
 	<path name="VoLTE-video-NS-mic-handset">
 		<path name="main-mic" />
 		<path name="sub-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC1 Volume" value="19" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="19" />
@@ -880,7 +835,7 @@
 	<path name="VoLTE-video-NS-mic-speaker">
 		<path name="sub-mic" />
 		<path name="3rd-mic" />
-		<ctl name="SLIM_0_TX Channels" value="Two" />
+		
 		<ctl name="ADC4 Volume" value="16" />
 		<ctl name="DEC1 Volume" value="84" />
 		<ctl name="ADC3 Volume" value="16" />
