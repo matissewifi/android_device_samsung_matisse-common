@@ -33,6 +33,9 @@ $(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_OUT_ETC)/system/etc/mixer_paths.xml
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 1280
@@ -66,6 +69,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
     $(LOCAL_PATH)/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+	$(LOCAL_PATH)/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
+    $(LOCAL_PATH)/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -79,8 +85,28 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_CHARACTERISTICS := tablet
 
-# Permissions
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8226 \
+    libboringssl-compat \
+    libstlport \
+    libxml2 \
+    Camera2
+
+# Input device
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/sec_e-pen.idc:$(TARGET_OUT_ETC)/system/usr/idc/sec_e-pen.idc \
+    $(LOCAL_PATH)/idc/sec_touchscreen.idc:$(TARGET_OUT_ETC)/system/usr/idc/sec_touchscreen.idc \
+    $(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:$(TARGET_OUT_ETC)/system/usr/idc/Synaptics_HID_TouchPad.idc \
+    $(LOCAL_PATH)/idc/Synaptics_RMI4_TouchPad_Sensor.idc:$(TARGET_OUT_ETC)/system/usr/idc/Synaptics_RMI4_TouchPad_Sensor.idc
+
+# matisse Permissions 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.software.midi.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.software.midi.xml \
+    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.hdmi.cec.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_OUT_ETC)/system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_OUT_ETC)/system/etc/permissions/tablet_core_hardware.xml
 
