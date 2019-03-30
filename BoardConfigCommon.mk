@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 # inherit from common msm8226
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
 LOCAL_PATH := device/samsung/matisse-common
-
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Use Snapdragon LLVM if available on build server
 #TARGET_USE_SDCLANG := true
@@ -61,8 +61,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Platform
 BOARD_USES_QC_TIME_SERVICES := true
-
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Power HAL
 #TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
