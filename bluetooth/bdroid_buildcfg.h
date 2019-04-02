@@ -18,6 +18,7 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
+#define BTM_DEF_LOCAL_NAME   "Galaxy Tab 4"
 
 #define BLUETOOTH_QTI_SW TRUE
 // Disables read remote device feature
