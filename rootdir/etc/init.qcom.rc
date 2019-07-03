@@ -1,4 +1,4 @@
- # Copyright (c) 2009-2012, The Linux Foundation. All rights reserved.
+# Copyright (c) 2009-2012, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -218,7 +218,7 @@ on early-boot
     # Allow subsystem (modem etc) debugging
     write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
 	
-	# Graphics fb0
+    # Graphics fb0
     chown system graphics /sys/class/graphics/fb0/idle_time
     chown system graphics /sys/class/graphics/fb0/dyn_pu
     chown system graphics /sys/class/graphics/fb0/dynamic_fps
@@ -232,8 +232,8 @@ on early-boot
     chmod 0664 /sys/class/graphics/fb0/mode
     chmod 0664 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
 	
-	# Graphics fb1
-	chown system graphics /sys/class/graphics/fb1/idle_time
+    # Graphics fb1
+    chown system graphics /sys/class/graphics/fb1/idle_time
     chown system graphics /sys/class/graphics/fb1/dyn_pu
     chown system graphics /sys/class/graphics/fb1/dynamic_fps
     chown system graphics /sys/class/graphics/fb1/modes
@@ -248,11 +248,11 @@ on early-boot
 
 on boot
 
-	# create symlink for fb0 as HDMI
+    # create symlink for fb0 as HDMI
     symlink /dev/graphics/fb0 /dev/graphics/hdmi
 	
-	# create symlink for fb1 as HDMI
-	symlink /dev/graphics/fb1 /dev/graphics/hdmi
+    # create symlink for fb1 as HDMI
+    symlink /dev/graphics/fb1 /dev/graphics/hdmi
 	
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
@@ -410,10 +410,6 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/brightness
 
 # Permissions for Display
-    # Auto Brightness
-    chown system system  /sys/class/backlight/panel/auto_brightness
-    chmod 0660 /sys/class/backlight/panel/auto_brightness
-
     # LCD mdnie and panel work
     chown system system  /sys/class/mdnie/mdnie/lcdtype
     chown system system  /sys/class/mdnie/mdnie/lcd_power
@@ -463,11 +459,7 @@ on boot
     chown system system /sys/class/lcd/panel/alpm
     chmod 0660 /sys/class/lcd/panel/alpm
 
-    # Auto Brightness
-    chown system system  /sys/class/backlight/panel/auto_brightness
-    chmod 0660 /sys/class/backlight/panel/auto_brightness
-
-   # LCD DYNAMIC FPS USE TE
+    # LCD DYNAMIC FPS USE TE
     chown system system /sys/class/lcd/panel/dynamic_fps_use_te
     chmod 0660 /sys/class/lcd/panel/dynamic_fps_use_te
 
@@ -509,7 +501,7 @@ on boot
     mkdir /dev/bus/ 755 root root
     mkdir /dev/bus/usb 755 root root
 
-# Permissions for InputDevices.
+    # Permissions for InputDevices.
     chown system radio /sys/class/sec/tsp/cmd
     chmod 0660 /sys/class/sec/tsp/input/enabled
     chown system system /sys/class/sec/tsp/input/enabled
@@ -518,30 +510,27 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/input/enabled
     chown system system /sys/class/sec/sec_touchkey/brightness
 
-# Permissions for keyboard key combination reject node.
+    # Permissions for keyboard key combination reject node.
     chmod 0660 /sys/class/sec/sec_key/reject_key_comb
     chown system system /sys/class/sec/sec_key/reject_key_comb
-# Permissions for Camera
-   chown root system /sys/class/camera/rear/rear_camantibanding
-   chown system system /sys/class/camera/rear/rear_camfw
-   chown system system /sys/class/camera/rear/rear_camfw_full
-   chown system system /sys/class/camera/rear/rear_camfw_load
-   chown system radio /sys/class/camera/rear/rear_latest_module_check
-   chown system system /sys/class/camera/rear/rear_camtype
-   chown system system /sys/class/camera/rear/rear_corever
-   chown system system /sys/class/camera/rear/rear_companionfw_full
-   chown system system /sys/class/camera/rear/rear_calcheck
-   chown system system /sys/class/camera/rear/rear_fwcheck
-   chown system system /sys/class/camera/rear/isp_core
-   chown system radio /sys/class/camera/flash/rear_flash
-   chown system system /sys/class/camera/front/front_camfw
-   chown system system /sys/class/camera/front/front_camtype
+    
+    # Permissions for Camera
+    chown root system /sys/class/camera/rear/rear_camantibanding
+    chown system system /sys/class/camera/rear/rear_camfw
+    chown system system /sys/class/camera/rear/rear_camfw_full
+    chown system system /sys/class/camera/rear/rear_camfw_load
+    chown system radio /sys/class/camera/rear/rear_latest_module_check
+    chown system system /sys/class/camera/rear/rear_camtype
+    chown system system /sys/class/camera/rear/rear_corever
+    chown system system /sys/class/camera/rear/rear_companionfw_full
+    chown system system /sys/class/camera/rear/rear_calcheck
+    chown system system /sys/class/camera/rear/rear_fwcheck
+    chown system system /sys/class/camera/rear/isp_core
+    chown system radio /sys/class/camera/flash/rear_flash
+    chown system system /sys/class/camera/front/front_camfw
+    chown system system /sys/class/camera/front/front_camtype
 
-    # Torch
-    chown system system /sys/class/leds/led:flash_torch/brightness
-    chmod 0666 /sys/class/leds/led:flash_torch/brightness
-
-# Permissions for SSRM
+    # Permissions for SSRM
     chmod 0664 /sys/devices/platform/sec-thermistor/temperature
     chmod 0664 /sys/class/power_supply/battery/siop_level
     chmod 0664 /sys/class/power_supply/battery/test_charge_current
@@ -549,14 +538,14 @@ on boot
     chown radio system /sys/class/power_supply/battery/siop_level
     chown radio system /sys/class/power_supply/battery/test_charge_current
 
-# MOBEAM
+    # MOBEAM
     chown system radio /sys/class/sec/sec_barcode_emul/vendor
     chown system radio /sys/class/sec/sec_barcode_emul/name
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_send
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_led_status
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_ver_check
 
-# Permissions for Charging
+    # Permissions for Charging
     mkdir /efs/Battery 0775 radio system
     chown system radio /sys/class/power_supply/battery/batt_reset_soc
     chown system radio /sys/class/power_supply/battery/update
@@ -581,14 +570,13 @@ on boot
     chmod 0664 /sys/class/power_supply/ps/status
     chmod 0664 /sys/class/power_supply/battery/batt_temp_table
     chown system radio /sys/class/power_supply/battery/batt_temp_table
-# Permissions for gpio_keys
+
+    # Permissions for gpio_keys
     chown system radio /sys/class/sec/sec_key/wakeup_keys
+    chown system radio /sys/class/sec/sec_key/hall_irq_ctrl
     write /sys/class/sec/sec_key/wakeup_keys 116,172
 
     setprop net.tcp.buffersize.wifi    524288,1048576,4525824,524288,1048576,4525824
-
-# Permissions for gpio_keys
-    chown system radio /sys/class/sec/sec_key/hall_irq_ctrl
 
     # Define default initial receive window size in segments.
     setprop net.tcp.default_init_rwnd 60
@@ -598,15 +586,6 @@ on boot
 
     # Permission for HALL IC
     chown system radio /sys/class/sec/sec_key/hall_detect
-
-    # Vibetonz
-    chmod 0660 /dev/tspdrv
-    chown vibe vibe /dev/tspdrv
-
-    # Vibrator
-    chmod 0644 /sys/class/timed_output/vibrator/pwm_value
-    chown system system /sys/class/timed_output/vibrator/pwm_value
-    chown system system /sys/class/timed_output/vibrator/enable
 
     # Permissions for TSP
     chown system system /sys/class/sec/tsp/cmd
@@ -652,8 +631,8 @@ on boot
     write /proc/sys/net/core/rmem_max  8388608
     write /proc/sys/net/core/wmem_max  8388608
 
-# Healthd can trigger a full boot from charger mode by signaling this
-# property when the power button is held.
+    # Healthd can trigger a full boot from charger mode by signaling this
+    # property when the power button is held.
 on property:sys.boot_from_charger_mode=1
     class_stop charger
     trigger late-init
@@ -771,12 +750,6 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi
     oneshot
-
-service wifi-crda /system/bin/sh /system/etc/init.crda.sh
-   class late_start
-   user root
-   disabled
-   oneshot
 
 # WPA
 service p2p_supplicant /system/bin/wpa_supplicant \
