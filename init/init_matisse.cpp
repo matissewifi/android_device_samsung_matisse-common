@@ -63,42 +63,42 @@ void init_target_properties(void)
     }
     else if (bootloader.find("T530XX") == 0) {
         /* matissewifixx */
-        property_set("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOJ4:user/release-keys");
-        property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOJ4 release-keys");
+        property_override("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOJ4:user/release-keys");
+        property_override("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOJ4 release-keys");
         property_override("ro.product.model", "SM-T530");
-        property_set("ro.product.name", "matissewifi");
-        property_set("ro.product.device", "matissewifi");
-        property_set("ro.carrier", "wifi-only");
-        property_set("ro.radio.noril", "1");
+        property_override("ro.product.name", "matissewifi");
+        property_override("ro.product.device", "matissewifi");
+        property_override("ro.carrier", "wifi-only");
+        property_override("ro.radio.noril", "1");
     }
     else if (bootloader.find("T531XX") == 0) {
         /* matisse3gxx */
-        property_set("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:5.0.2/LRX22G/T531XXU1BOE6:user/release-keys");
-        property_set("ro.build.description", "matisse3gxx-user 5.0.2 LRX22G T531XXU1BOE6 release-keys");
+        property_override("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:5.0.2/LRX22G/T531XXU1BOE6:user/release-keys");
+        property_override("ro.build.description", "matisse3gxx-user 5.0.2 LRX22G T531XXU1BOE6 release-keys");
         property_override("ro.product.model", "SM-T531");
-        property_set("ro.product.name", "matisse3g");
-        property_set("ro.product.device", "matisse3g");
-        property_set("telephony.lteOnCdmaDevice", "0");
-        property_set("telephony.lteOnGsmDevice", "0");
-        property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
+        property_override("ro.product.name", "matisse3g");
+        property_override("ro.product.device", "matisse3g");
+        property_override("telephony.lteOnCdmaDevice", "0");
+        property_override("telephony.lteOnGsmDevice", "0");
+        property_override("ro.telephony.ril_class", "SamsungMSM8226RIL");
     }
     else if (bootloader.find("T535XX") == 0) {
         /* matisseltexx */
-        property_set("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOL1:user/release-keys");
-        property_set("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOL1 release-keys");
+        property_override("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOL1:user/release-keys");
+        property_override("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOL1 release-keys");
         property_override("ro.product.model", "SM-T535");
-        property_set("ro.product.name", "matisselte");
-        property_set("ro.product.device", "matisselte");
-        property_set("telephony.lteOnGsmDevice", "1");
-        property_set("ro.telephony.default_network", "10");
-        property_set("ro.telephony.ril_class", "SamsungMSM8226RIL");
+        property_override("ro.product.name", "matisselte");
+        property_override("ro.product.device", "matisselte");
+        property_override("telephony.lteOnGsmDevice", "1");
+        property_override("ro.telephony.default_network", "10");
+        property_override("ro.telephony.ril_class", "SamsungMSM8226RIL");
     } else {
         /* matissewifi */
         property_override("ro.product.model", "SM-T5XX");
-        property_set("ro.product.name", "matissexx");
-        property_set("ro.product.device", "matisse");
-        property_set("ro.carrier", "wifi-only");
-        property_set("ro.radio.noril", "1");
+        property_override("ro.product.name", "matissexx");
+        property_override("ro.product.device", "matisse");
+        property_override("ro.carrier", "wifi-only");
+        property_override("ro.radio.noril", "1");
     }
 
     std::string device = property_get("ro.product.device");
