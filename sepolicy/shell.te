@@ -1,0 +1,12 @@
+allow shell adbsecure_prop:file { getattr open };
+allow shell audio_device:dir getattr;
+allow shell device:chr_file getattr;
+allow shell device:dir { open read };
+allow shell hci_attach_dev:chr_file getattr;
+allow shell recovery_prop:file { getattr open };
+allow shell smd_device:chr_file getattr;
+allow shell smem_log_device:chr_file getattr;
+allow shell ssr_device:chr_file getattr;
+allow shell sys_usb_configfs_prop:file { getattr open };
+allow shell sys_usb_tethering_prop:file { getattr open };
+allow shell userinit_prop:file { getattr open };
