@@ -80,7 +80,6 @@ void init_target_properties(void)
         property_override("ro.product.device", "matisse3g");
         property_override("telephony.lteOnCdmaDevice", "0");
         property_override("telephony.lteOnGsmDevice", "0");
-        property_override("ro.telephony.ril_class", "SamsungMSM8226RIL");
     }
     else if (bootloader.find("T535XX") == 0) {
         /* matisseltexx */
@@ -91,7 +90,6 @@ void init_target_properties(void)
         property_override("ro.product.device", "matisselte");
         property_override("telephony.lteOnGsmDevice", "1");
         property_override("ro.telephony.default_network", "10");
-        property_override("ro.telephony.ril_class", "SamsungMSM8226RIL");
     } else {
         /* matissewifi */
         property_override("ro.product.model", "SM-T5XX");
