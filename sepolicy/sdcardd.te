@@ -1,3 +1,4 @@
 allow sdcardd unlabeled:dir getattr;
 allow sdcardd unlabeled:dir { read search };
 allow sdcardd unlabeled:dir open;
+allow sdcardd unlabeled:dir setattr;
