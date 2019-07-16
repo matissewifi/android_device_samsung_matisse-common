@@ -18,3 +18,4 @@ binder_call(mm-qcamerad, servicemanager)
 binder_call(mm-qcamerad, system_server)
 
 unix_socket_connect(mm-qcamerad, mpctl, mpdecision)
+allow mm-qcamerad unlabeled:sock_file unlink;
