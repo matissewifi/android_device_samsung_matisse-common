@@ -14,3 +14,6 @@ allow system_server user_profile_data_file:dir write;
 allow system_server unlabeled:file unlink;
 allow system_server sysfs_sec:dir search;
 allow system_server sysfs_sec:file write;
+allow system_server sysfs_sec:file read;
+allow system_server sysfs_sec:file open;
+allow system_server sysfs_sec:file getattr;
