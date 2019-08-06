@@ -90,6 +90,7 @@ void init_target_properties(void)
         property_override("ro.product.device", "matisselte");
         property_override("telephony.lteOnGsmDevice", "1");
         property_override("ro.telephony.default_network", "0");
+    }
     else if (bootloader.find("T537T") == 0) {
         /* matisseltexx */
         property_set("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOL1:user/release-keys");
