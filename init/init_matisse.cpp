@@ -78,11 +78,8 @@ void init_target_properties(void)
         property_override("ro.product.model", "SM-T531");
         property_override("ro.product.name", "matisse3g");
         property_override("ro.product.device", "matisse3g");
-        property_override("ro.carrier", "wifi-only");
-        property_override("ro.radio.noril", "1");
-        /* RIL Disable Temporarily */
-        /* property_override("telephony.lteOnCdmaDevice", "0");
-        property_override("telephony.lteOnGsmDevice", "0"); */
+        property_override("telephony.lteOnCdmaDevice", "0");
+        property_override("telephony.lteOnGsmDevice", "0");
     }
     else if (bootloader.find("T535XX") == 0) {
         /* matisseltexx */
@@ -91,11 +88,17 @@ void init_target_properties(void)
         property_override("ro.product.model", "SM-T535");
         property_override("ro.product.name", "matisselte");
         property_override("ro.product.device", "matisselte");
-        property_override("ro.carrier", "wifi-only");
-        property_override("ro.radio.noril", "1");
-        /* RIL Disable Temporarily */
-        /* property_override("telephony.lteOnGsmDevice", "1");
-        property_override("ro.telephony.default_network", "10"); */
+        property_override("telephony.lteOnGsmDevice", "1");
+        property_override("ro.telephony.default_network", "0");
+    else if (bootloader.find("T537T") == 0) {
+        /* matisseltexx */
+        property_set("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOL1:user/release-keys");
+        property_set("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOL1 release-keys");
+        property_override("ro.product.model", "SM-T537T");
+        property_override("ro.product.name", "matisseltetmo");
+        property_override("ro.product.device", "matisseltetmo");
+        property_override("telephony.lteOnGsmDevice", "1");
+        property_override("ro.telephony.default_network", "0");
     } else {
         /* matissewifi */
         property_override("ro.product.model", "SM-T5XX");
