@@ -46,6 +46,7 @@
 	<ctl name="COMP0 Switch" value="0" />
 	<ctl name="COMP1 Switch" value="0" />
 	<ctl name="COMP2 Switch" value="0" />
+	<ctl name="Speaker Digital Switch" id="0" value="0" />
 	<ctl name="CRADLE Switch" value="0" />
 
 	<!-- reset TX part -->
@@ -78,9 +79,9 @@
 	<ctl name="DEC2 MUX" value="ZERO" />
 	<ctl name="DEC1 MUX" value="ZERO" />
 	<!-- end of initial mixer settings -->
-  	
+	
 	<!-- echo reference -->
-  	<ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
+	<ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
 	<!-- end of echo reference -->
 
 	<!-- ================================================================ -->
@@ -104,22 +105,23 @@
 		<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="1" />
 	</path>
 
+	<!-- echo reference -->
 	<path name="echo-reference">
-        	<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
-    	</path>
-   
+		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
+	</path>
+
 	<path name="quat-mi2s-internal-echo-reference">
 		<ctl name="AUDIO_REF_EC_UL1 MUX" value="QUAT_MI2S_RX" />
-   	</path>
-   	
+	</path>
+
 	<path name="echo-reference headphones">
-      		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_5_RX" />
+		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_5_RX" />
 	</path>
-	
+
 	<path name="bt-sco-echo-reference">
-        	<ctl name="AUDIO_REF_EC_UL1 MUX" value="SEC_AUX_PCM_RX" />
+		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SEC_AUX_PCM_RX" />
 	</path>
-	
+
 	<!-- low latency -->
 	<path name="low-latency-playback">
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
@@ -175,9 +177,23 @@
 		<ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="1" />
 	</path>
 	
-  	<path name="low-latency-record">
-        	<ctl name="MultiMedia5 Mixer SLIM_0_TX" value="1" />
-        </path>
+	<!-- low latency record-->
+	<path name="low-latency-record">
+		<ctl name="MultiMedia5 Mixer SLIM_0_TX" value="1" />
+	</path>
+
+	<path name="low-latency-record usb-headset-mic">
+		<ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="1" />
+	</path>
+
+	<path name="low-latency-record bt-sco">
+		<ctl name="MultiMedia5 Mixer INTERNAL_BT_SCO_TX" value="1" />
+	</path>
+
+	<path name="low-latency-record bt-sco-wb">
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+		<path name="audio-record bt-sco" />
+	</path>
 
 	<!-- call part -->
 	<path name="voice-call">
@@ -210,6 +226,8 @@
 		<ctl name="RX1 MIX1 INP1" value="RX1" />
 		<ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
 		<ctl name="DAC1 Switch" value="1" />
+		<ctl name="SPK DAC Switch" value="1" />
+		<ctl name="COMP0 Switch" value="1" />
 	</path>
 
 	<path name="spk">
@@ -219,6 +237,8 @@
 		<ctl name="RX4 MIX1 INP1" value="RX1" />
 		<ctl name="RX3 MIX1 INP1" value="RX2" />
 		<ctl name="RDAC5 MUX" value="DEM4" />
+		<ctl name="SPK DAC Switch" value="1" />
+		<ctl name="COMP1 Switch" value="1" />
 	</path>
 
 	<path name="ear">
