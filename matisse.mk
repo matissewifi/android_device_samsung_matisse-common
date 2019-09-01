@@ -101,7 +101,7 @@ PRODUCT_COPY_FILES += \
 # matisse Permissions 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.camera.xml \
-	frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.camera.autofocus.xmll \
+	frameworks/native/data/etc/android.hardware.camera.autofocus.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_OUT_ETC)/system/etc/permissions/android.software.midi.xml \
