@@ -1,9 +1,35 @@
+ifeq ($(TARGET_PROVIDES_CAMERA_HAL),true)
+
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-#ifeq ($(TARGET_NEED_EXPOSURE_HACK),true)
+ifeq ($(TARGET_NEED_DISABLE_AUTOFOCUS),true)
+    LOCAL_CFLAGS += -DDISABLE_AUTOFOCUS
+endif
+
+ifeq ($(TARGET_NEED_DISABLE_FACE_DETECTION_BOTH_CAMERAS),true)
+    LOCAL_CFLAGS += -DDISABLE_FACE_DETECTION_BOTH_CAMERAS
+endif
+
+ifeq ($(TARGET_NEED_CAMERA_ZSL),true)
+    LOCAL_CFLAGS += -DENABLE_ZSL
+endif
+
+ifeq ($(TARGET_NEED_PREVIEW_SIZE_FIXUP),true)
+    LOCAL_CFLAGS += -DPREVIEW_SIZE_FIXUP
+endif
+
+ifeq ($(TARGET_NEED_SAMSUNG_CAMERA_MODE),true)
+    LOCAL_CFLAGS += -DSAMSUNG_CAMERA_MODE
+endif
+
+ifeq ($(TARGET_ADD_ISO_MODE_1600),true)
+    LOCAL_CFLAGS += -DISO_MODE_1600
+endif
+
+ifeq ($(TARGET_NEED_EXPOSURE_HACK),true)
     LOCAL_CFLAGS += -DEXPOSURE_HACK
-#endif
+endif
 
 LOCAL_C_INCLUDES := \
     system/media/camera/include
@@ -15,7 +41,10 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware liblog libcamera_client libutils
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE := camera.msm8226
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
+
