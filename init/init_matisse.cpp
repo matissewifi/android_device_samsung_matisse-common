@@ -78,8 +78,12 @@ void init_target_properties(void)
         property_override("ro.product.model", "SM-T531");
         property_override("ro.product.name", "matisse3g");
         property_override("ro.product.device", "matisse3g");
-        property_override("telephony.lteOnCdmaDevice", "0");
+        property_override("ro.debuggable", "1");
+        property_override("ro.telephony.call_ring.multiple", "0");
+        property_override("ro.opengles.version", "196608");
+        property_override("ro.qualcomm.bt.hci_transport", "smd");
         property_override("telephony.lteOnGsmDevice", "0");
+        property_override("ro.telephony.default_network", "0");
     }
     else if (bootloader.find("T535XX") == 0) {
         /* matisseltexx */
@@ -88,8 +92,14 @@ void init_target_properties(void)
         property_override("ro.product.model", "SM-T535");
         property_override("ro.product.name", "matisselte");
         property_override("ro.product.device", "matisselte");
+       property_override("ro.debuggable", "1");
+        property_override("ro.telephony.call_ring.multiple", "0");
+        property_override("ro.opengles.version", "196608");
+        property_override("ro.ril.svlte1x", "false");
+        property_override("ro.ril.svdo", "false");
+        property_override("ro.qualcomm.bt.hci_transport", "smd");
         property_override("telephony.lteOnGsmDevice", "1");
-        property_override("ro.telephony.default_network", "0");
+        property_override("ro.telephony.default_network", "9");
     }
     else if (bootloader.find("T537T") == 0) {
         /* matisseltexx */
@@ -98,8 +108,14 @@ void init_target_properties(void)
         property_override("ro.product.model", "SM-T537T");
         property_override("ro.product.name", "matisseltetmo");
         property_override("ro.product.device", "matisseltetmo");
+        property_override("ro.debuggable", "1");
+        property_override("ro.telephony.call_ring.multiple", "0");
+        property_override("ro.opengles.version", "196608");
+        property_override("ro.ril.svlte1x", "false");
+        property_override("ro.ril.svdo", "false");
+        property_override("ro.qualcomm.bt.hci_transport", "smd");
         property_override("telephony.lteOnGsmDevice", "1");
-        property_override("ro.telephony.default_network", "0");
+        property_override("ro.telephony.default_network", "9");
     } else {
         /* matissewifi */
         property_override("ro.product.model", "SM-T5XX");
