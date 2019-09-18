@@ -5,3 +5,6 @@ allow sdcardd unlabeled:dir setattr;
 allow sdcardd unlabeled:file getattr;
 allow sdcardd unlabeled:file { read write };
 allow sdcardd unlabeled:file open;
+allow sdcardd unlabeled:dir write;
+allow sdcardd media_data_file:dir { add_name getattr open read remove_name write };
+allow sdcardd media_data_file:file { create getattr open read unlink write };

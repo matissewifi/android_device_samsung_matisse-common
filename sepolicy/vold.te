@@ -11,3 +11,4 @@ allow vold persist_misc_file:dir { add_name getattr remove_name write };
 allow vold persist_misc_file:file { create open read unlink write };
 allow vold efs_file:dir search;
 allow vold persist_data_file:dir search;
+allow vold media_data_file:dir { getattr setattr };
