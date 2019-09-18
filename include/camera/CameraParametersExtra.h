@@ -66,10 +66,6 @@ const char CameraParameters::KEY_EXIF_DATETIME[] = "exif-datetime"; \
 const char CameraParameters::KEY_AUTO_EXPOSURE[] = "auto-exposure"; \
 const char CameraParameters::KEY_SUPPORTED_AUTO_EXPOSURE[] = "auto-exposure-values"; \
 const char CameraParameters::KEY_SUPPORTED_LENSSHADE_MODES[] = "lensshade-values"; \
-const char CameraParameters::KEY_EXPOSURE_COMPENSATION[] = "exposure-compensation"; \
-const char CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION[] = "max-exposure-compensation"; \
-const char CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION[] = "min-exposure-compensation"; \
-const char CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP[] = "exposure-compensation-step"; \
 const char CameraParameters::LENSSHADE_ENABLE[] = "enable"; \
 const char CameraParameters::LENSSHADE_DISABLE[] = "disable"; \
 const char CameraParameters::MCE_ENABLE[] = "enable"; \
@@ -121,6 +117,13 @@ const char CameraParameters::EFFECT_VINTAGE_WARM[] = "vintage-warm"; \
 const char CameraParameters::EFFECT_WASHED[] = "washed"; \
 const char CameraParameters::SCENE_MODE_BACKLIGHT[] = "backlight"; \
 const char CameraParameters::SCENE_MODE_ASD[] = "asd"; \
+int CameraParameters::getInt64(__attribute__((__unused__)) const char *key) const { return -1; } \
+const char *CameraParameters::getPreviewFrameRateMode() const { return get(KEY_PREVIEW_FRAME_RATE_MODE); }; \
+void CameraParameters::setPreviewFrameRateMode(const char *mode) { set(KEY_PREVIEW_FRAME_RATE_MODE, mode); }; \
+void CameraParameters::getMeteringAreaCenter(int *x, int *y) const { }; \
+void CameraParameters::setTouchIndexAec(int x, int y) { }; \
+void CameraParameters::setTouchIndexAf(int x, int y) { }; \
+void CameraParameters::setPreviewFpsRange(int minFPS, int maxFPS) { };
 
 #define CAMERA_PARAMETERS_EXTRA_H \
     static const char KEY_SUPPORTED_ISO_MODES[]; \
@@ -174,10 +177,6 @@ const char CameraParameters::SCENE_MODE_ASD[] = "asd"; \
     static const char KEY_AUTO_EXPOSURE[]; \
     static const char KEY_SUPPORTED_AUTO_EXPOSURE[]; \
     static const char KEY_SUPPORTED_LENSSHADE_MODES[]; \
-	static const char CameraParameters::KEY_EXPOSURE_COMPENSATION[]; \
-	static const char CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION[]; \
-	static const char CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION[]; \
-	static const char CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP[]; \
     static const char LENSSHADE_ENABLE[]; \
     static const char LENSSHADE_DISABLE[]; \
     static const char MCE_ENABLE[]; \
@@ -236,3 +235,4 @@ const char CameraParameters::SCENE_MODE_ASD[] = "asd"; \
     void setTouchIndexAec(int x, int y); \
     void setTouchIndexAf(int x, int y); \
     void setPreviewFpsRange(int minFPS, int maxFPS);
+
