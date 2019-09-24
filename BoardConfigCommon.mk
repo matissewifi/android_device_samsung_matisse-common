@@ -27,6 +27,10 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 TARGET_LD_SHIM_LIBS += \
         /system/vendor/lib/libmmcamera_sr130pc20.so|libshim_sr130pc20.so
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8226
+TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/matisse/init/init_matisse.cpp
+
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
 
